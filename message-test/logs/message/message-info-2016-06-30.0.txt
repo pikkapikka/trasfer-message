@@ -1,0 +1,9 @@
+2016-06-30 09:20:06 671  [main] INFO  c.s.message.MessageTestApplication - Starting MessageTestApplication on PC201601212 with PID 8228 (E:\code\git\message-platform\message-test\target\classes started by Administrator in E:\code\git\message-platform\message-test)
+2016-06-30 09:20:06 674  [main] INFO  c.s.message.MessageTestApplication - The following profiles are active: test
+2016-06-30 09:20:09 3914 [main] INFO  c.s.message.MessageTestApplication - Started MessageTestApplication in 3.717 seconds (JVM running for 4.107)
+2016-06-30 09:36:42 649  [main] INFO  c.s.message.MessageTestApplication - Starting MessageTestApplication on PC201601212 with PID 9156 (E:\code\git\message-platform\message-test\target\classes started by Administrator in E:\code\git\message-platform\message-test)
+2016-06-30 09:36:42 650  [main] INFO  c.s.message.MessageTestApplication - The following profiles are active: test
+2016-06-30 09:36:45 3703 [main] INFO  c.s.message.MessageTestApplication - Started MessageTestApplication in 3.547 seconds (JVM running for 3.865)
+2016-06-30 09:53:49 555  [main] INFO  c.s.message.MessageTestApplication - Starting MessageTestApplication on PC201601212 with PID 8892 (E:\code\git\message-platform\message-test\target\classes started by Administrator in E:\code\git\message-platform\message-test)
+2016-06-30 09:53:49 557  [main] INFO  c.s.message.MessageTestApplication - The following profiles are active: test
+2016-06-30 09:53:53 3736 [main] INFO  c.s.message.MessageTestApplication - Started MessageTestApplication in 3.582 seconds (JVM running for 3.896)

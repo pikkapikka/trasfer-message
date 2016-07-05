@@ -1,0 +1,11 @@
+2016-07-05 10:06:28 603  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-05 10:06:28 633  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 9120 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-05 10:06:28 633  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-05 10:06:28 634  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-05 10:06:32 4508 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.343 seconds (JVM running for 4.683)
+2016-07-05 10:07:00 31719 [pool-2-thread-1] DEBUG c.s.m.d.split.MessageDataSplitTask - create table tbl_received_message_20160628 ( select * from tbl_received_message m where m.receive_time < 1467079620002 )
+2016-07-05 10:07:00 31960 [pool-2-thread-1] DEBUG c.s.m.d.split.MessageDataSplitTask - delete from tbl_received_message where receive_time < 1467079620002 limit 2000
+2016-07-05 10:07:01 32984 [pool-2-thread-1] DEBUG c.s.m.d.split.MessageDataSplitTask - create table tbl_message_send_result_20160628 (select * from tbl_message_send_result where exists ( select 1 from tbl_received_message_20160628 m, tbl_message_send_result t where m.uuid = t.message_uuid))
+2016-07-05 10:07:01 33416 [pool-2-thread-1] DEBUG c.s.m.d.split.MessageDataSplitTask - delete from tbl_message_send_result where message_uuid in ( select message_uuid from tbl_message_send_result_20160628) limit 2000
+2016-07-05 10:07:03 34893 [pool-2-thread-1] DEBUG c.s.m.d.split.MessageDataSplitTask - create table tbl_message_notify_result_20160628 (select * from tbl_message_notify_result where exists ( select 1 from tbl_received_message_20160628 m, tbl_message_notify_result t where m.uuid = t.message_uuid))
+2016-07-05 10:07:03 35025 [pool-2-thread-1] DEBUG c.s.m.d.split.MessageDataSplitTask - delete from tbl_message_notify_result where message_uuid in ( select message_uuid from tbl_message_notify_result_20160628) limit 2000

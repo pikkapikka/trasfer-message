@@ -1,0 +1,274 @@
+2016-07-04 10:07:51 778  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 6164 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 10:07:51 784  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 10:07:51 785  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 10:08:04 14085 [main] ERROR o.a.coyote.http11.Http11NioProtocol - Failed to start end point associated with ProtocolHandler ["http-nio-8082"]
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:340)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:765)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:473)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:986)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:239)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:194)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:151)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:293)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.data.app.MessageDataApplication.main(MessageDataApplication.java:89)
+2016-07-04 10:08:04 14086 [main] ERROR o.a.catalina.core.StandardService - Failed to start connector [Connector[HTTP/1.1-8082]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8082]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:153)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:239)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:194)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:151)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:293)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.data.app.MessageDataApplication.main(MessageDataApplication.java:89)
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:993)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	... 13 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:340)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:765)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:473)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:986)
+	... 14 common frames omitted
+2016-07-04 10:08:04 14106 [main] ERROR o.s.boot.SpringApplication - Application startup failed
+org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat servlet container
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:165)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:293)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.data.app.MessageDataApplication.main(MessageDataApplication.java:89)
+Caused by: java.lang.IllegalStateException: Tomcat connector in failed state
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:159)
+	... 10 common frames omitted
+2016-07-04 10:09:17 569  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 10:09:17 603  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 4024 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 10:09:17 603  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 10:09:17 603  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 10:09:20 4217 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.064 seconds (JVM running for 4.397)
+2016-07-04 11:43:41 714  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 7048 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 11:43:41 716  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 11:43:41 716  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 11:43:45 4565 [main] ERROR o.a.coyote.http11.Http11NioProtocol - Failed to start end point associated with ProtocolHandler ["http-nio-8089"]
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:340)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:765)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:473)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:986)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:239)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:194)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:151)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:293)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.data.app.MessageDataApplication.main(MessageDataApplication.java:91)
+2016-07-04 11:43:45 4566 [main] ERROR o.a.catalina.core.StandardService - Failed to start connector [Connector[HTTP/1.1-8089]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8089]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:153)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:239)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:194)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:151)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:293)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.data.app.MessageDataApplication.main(MessageDataApplication.java:91)
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:993)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	... 13 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:340)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:765)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:473)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:986)
+	... 14 common frames omitted
+2016-07-04 11:43:45 4584 [main] ERROR o.s.boot.SpringApplication - Application startup failed
+org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat servlet container
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:165)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:293)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.data.app.MessageDataApplication.main(MessageDataApplication.java:91)
+Caused by: java.lang.IllegalStateException: Tomcat connector in failed state
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:159)
+	... 10 common frames omitted
+2016-07-04 11:44:00 576  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 11:44:00 617  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 5484 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 11:44:00 617  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 11:44:00 618  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 11:44:04 4221 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.06 seconds (JVM running for 4.395)
+2016-07-04 13:05:39 581  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 2316 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 13:05:39 583  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 13:05:39 583  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 13:05:39 600  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 13:05:42 3502 [main] ERROR o.s.boot.SpringApplication - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'messageDataSplitTask': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private int com.softisland.message.data.split.MessageDataSplitTask.days; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'message.data.split.per.days' in string value "${message.data.split.per.days}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.data.app.MessageDataApplication.main(MessageDataApplication.java:91)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private int com.softisland.message.data.split.MessageDataSplitTask.days; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'message.data.split.per.days' in string value "${message.data.split.per.days}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:573)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 17 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'message.data.split.per.days' in string value "${message.data.split.per.days}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:204)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:178)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:808)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1027)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:545)
+	... 19 common frames omitted
+2016-07-04 13:06:44 580  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 13:06:44 594  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 7608 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 13:06:44 594  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 13:06:44 594  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 13:06:48 4038 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 3.873 seconds (JVM running for 4.209)
+2016-07-04 13:07:17 580  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 13:07:17 592  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 7680 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 13:07:17 593  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 13:07:17 593  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 13:07:20 4001 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 3.844 seconds (JVM running for 4.172)
+2016-07-04 13:08:51 545  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 13:08:51 572  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 7616 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 13:08:51 573  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 13:08:51 573  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 13:08:55 3996 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 3.837 seconds (JVM running for 4.175)
+2016-07-04 17:03:58 651  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 1660 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 17:03:58 653  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 17:03:58 653  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 17:04:02 4157 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 3.996 seconds (JVM running for 4.33)
+2016-07-04 17:06:08 585  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 4604 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 17:06:08 587  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 17:06:08 587  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 17:06:08 589  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 17:06:12 4292 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.134 seconds (JVM running for 4.467)
+2016-07-04 17:12:49 576  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 17:12:50 602  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 7492 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 17:12:50 602  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 17:12:50 602  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 17:12:54 4759 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.599 seconds (JVM running for 4.934)
+2016-07-04 17:17:04 733  [background-preinit] DEBUG o.h.v.i.e.r.DefaultTraversableResolver - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2016-07-04 17:17:05 803  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 6688 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 17:17:05 803  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 17:17:05 803  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 17:17:08 4423 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.169 seconds (JVM running for 4.616)
+2016-07-04 17:49:41 612  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 17:49:41 623  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 7416 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 17:49:41 624  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 17:49:41 624  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 17:49:44 4278 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.109 seconds (JVM running for 4.452)
+2016-07-04 17:52:09 551  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 17:52:09 560  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 7276 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 17:52:09 560  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 17:52:09 560  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 17:52:13 4324 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.172 seconds (JVM running for 4.489)
+2016-07-04 17:53:50 573  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 17:53:50 615  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 8184 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 17:53:50 616  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 17:53:50 616  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 17:53:53 4194 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.031 seconds (JVM running for 4.364)
+2016-07-04 17:57:53 593  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 5468 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 17:57:53 592  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 17:57:53 595  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 17:57:53 595  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 17:57:57 4024 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 3.862 seconds (JVM running for 4.207)
+2016-07-04 18:00:37 568  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 18:00:37 609  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 5364 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 18:00:37 610  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 18:00:37 610  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 18:00:40 4211 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.054 seconds (JVM running for 4.385)
+2016-07-04 18:03:12 559  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 18:03:13 598  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 7748 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 18:03:13 598  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 18:03:13 598  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 18:03:16 4046 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 3.89 seconds (JVM running for 4.225)
+2016-07-04 18:05:22 619  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 18:05:22 620  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 7468 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 18:05:22 621  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 18:05:22 622  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 18:05:25 4344 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.177 seconds (JVM running for 4.516)
+2016-07-04 18:08:59 593  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-04 18:08:59 606  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 6124 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-04 18:08:59 606  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-04 18:08:59 607  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-04 18:09:03 4376 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.215 seconds (JVM running for 4.555)

@@ -1,0 +1,820 @@
+2016-06-30 08:51:49 625  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 9128 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 08:51:49 627  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 08:51:53 5112 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 08:51:54 5270 [main] INFO  c.s.message.init.InitSystemMode - this is the master system
+2016-06-30 08:51:54 5998 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 5.818 seconds (JVM running for 6.19)
+2016-06-30 08:51:54 5998 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 08:51:54 6023 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 08:51:54 6024 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 08:51:54 6024 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 08:51:54 6024 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 08:51:54 6025 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 08:51:54 6025 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 08:51:54 6026 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 08:51:54 6026 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 08:51:54 6028 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 08:51:54 6028 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 08:51:54 6028 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 08:51:54 6031 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 08:52:18 618  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 8288 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 08:52:18 619  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 08:52:23 5148 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 08:52:23 5316 [main] ERROR c.s.message.init.InitSystemMode - create temp date exception, system exit.
+org.apache.zookeeper.KeeperException$NodeExistsException: KeeperErrorCode = NodeExists for /message-ha-aaa-session
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:119)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:51)
+	at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:783)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:721)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:704)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:108)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:701)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:477)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:467)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.softisland.curator.framework.CuratorCrudUtils.createEphemeral(CuratorCrudUtils.java:43)
+	at com.softisland.message.init.InitSystemMode.createTempData(InitSystemMode.java:87)
+	at com.softisland.message.init.InitSystemMode.initSystemMode(InitSystemMode.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:175)
+2016-06-30 09:37:57 605  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 372 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 09:37:57 606  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 09:38:00 3528 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 09:38:00 3842 [main] INFO  c.s.message.init.InitSystemMode - this is the master system
+2016-06-30 09:38:02 5412 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 5.239 seconds (JVM running for 5.58)
+2016-06-30 09:38:02 5412 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 09:38:02 5440 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 09:38:02 5441 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 09:38:02 5445 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 09:38:02 5445 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 09:38:02 5446 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 09:38:02 5446 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 09:38:02 5447 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 09:38:02 5448 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 09:38:02 5449 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 09:38:02 5450 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 09:38:02 5453 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 09:38:02 5463 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 09:48:59 684  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 6988 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 09:48:59 686  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 09:49:03 3959 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 09:49:03 4111 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:50:41 102724 [main] INFO  c.s.message.init.InitSystemMode - this is the master system
+2016-06-30 09:50:43 103943 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 103.755 seconds (JVM running for 104.11)
+2016-06-30 09:50:43 103943 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 09:50:43 103971 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 09:50:43 103973 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 09:50:43 103973 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 09:50:43 103973 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 09:50:43 103973 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 09:50:43 103974 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 09:50:43 103975 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 09:50:43 103976 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 09:50:43 103973 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 09:50:43 103979 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 09:50:43 103980 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 09:50:43 103982 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 09:54:01 766  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 5996 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 09:54:01 771  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 09:54:05 4808 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 09:54:05 4985 [main] INFO  c.s.message.init.InitSystemMode - this is the master system
+2016-06-30 09:54:18 17935 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 17.727 seconds (JVM running for 18.329)
+2016-06-30 09:54:18 17935 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 09:54:18 17962 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 09:54:18 17963 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 09:54:18 17963 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 09:54:18 17963 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 09:54:18 17964 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 09:54:18 17964 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 09:54:18 17970 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 09:54:18 17971 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 09:54:18 17972 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 09:54:18 17973 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 09:54:18 17974 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 09:54:18 17976 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 09:54:29 750  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 8544 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 09:54:29 750  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 09:54:32 4470 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 09:54:33 4657 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:33 4657 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:33 5230 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:34 5804 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:34 6379 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:35 6953 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:35 7535 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:36 8118 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:37 8701 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:37 9283 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:38 9858 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:38 10432 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:39 11015 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:40 11606 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:40 12205 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:41 12805 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:41 13379 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:42 13962 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:42 14561 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:43 15144 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:44 15728 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:44 16319 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:45 16901 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:45 17476 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:46 18059 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:47 18634 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:47 19208 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:48 19790 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:48 20381 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:49 20956 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:49 21530 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:50 22121 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:51 22704 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:51 23287 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:52 23869 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:52 24444 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:53 25052 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:54 25626 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:54 26201 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:55 26775 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:55 27349 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:56 27932 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:56 28507 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:57 29089 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:58 29672 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:58 30263 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:59 30846 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:54:59 31420 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:55:00 32003 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:55:01 32577 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:55:01 33160 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:55:02 33744 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:55:02 34327 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:55:03 34910 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:55:03 35492 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:55:04 36077 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:55:05 36666 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:55:30 742  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 10256 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 09:55:30 742  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 09:55:34 4418 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 09:55:34 4593 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 09:56:47 77471 [main] INFO  c.s.message.init.InitSystemMode - this is the master system
+2016-06-30 09:56:57 87524 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 87.316 seconds (JVM running for 87.739)
+2016-06-30 09:56:57 87524 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 09:56:57 87550 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 09:56:57 87551 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 09:56:57 87552 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 09:56:57 87552 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 09:56:57 87552 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 09:56:57 87552 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 09:56:57 87552 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 09:56:57 87553 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 09:56:57 87554 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 09:56:57 87558 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 09:56:57 87558 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 09:56:57 87560 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 10:25:16 636  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 7176 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 10:25:16 638  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 10:25:19 3712 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 10:25:19 4048 [main] INFO  c.s.message.init.InitSystemMode - this is the master system
+2016-06-30 10:25:20 5163 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 4.984 seconds (JVM running for 5.329)
+2016-06-30 10:25:20 5163 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 10:25:21 5190 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 10:25:21 5192 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 10:25:21 5192 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 10:25:21 5192 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 10:25:21 5193 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 10:25:21 5193 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 10:25:21 5194 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 10:25:21 5195 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 10:25:21 5196 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 10:25:21 5197 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 10:25:21 5198 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 10:25:21 5200 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 10:25:23 930  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 9348 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 10:25:23 930  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 10:25:27 4927 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 10:25:27 5125 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 10:25:43 21474 [main] INFO  c.s.message.init.InitSystemMode - this is the master system
+2016-06-30 10:25:49 27086 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 26.853 seconds (JVM running for 27.42)
+2016-06-30 10:25:49 27089 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 10:25:49 27120 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 10:25:49 27122 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 10:25:49 27122 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 10:25:49 27122 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 10:25:49 27122 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 10:25:49 27122 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 10:25:49 27124 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 10:25:49 27125 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 10:25:49 27127 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 10:25:49 27130 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 10:25:49 27133 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 10:25:49 27133 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 10:27:20 636  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 10964 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 10:27:20 636  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 10:27:23 3618 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 10:27:23 3761 [main] INFO  c.s.message.init.InitSystemMode - this is the master system
+2016-06-30 10:27:25 5009 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 4.827 seconds (JVM running for 5.185)
+2016-06-30 10:27:25 5009 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 10:27:25 5034 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 10:27:25 5036 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 10:27:25 5036 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 10:27:25 5036 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 10:27:25 5037 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 10:27:25 5037 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 10:27:25 5042 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 10:27:25 5042 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 10:27:25 5043 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 10:27:25 5044 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 10:27:25 5044 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 10:27:25 5055 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 10:27:26 758  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 4440 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 10:27:26 758  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 10:27:29 3885 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 10:27:29 4296 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 10:28:19 54291 [main] INFO  c.s.message.init.InitSystemMode - this is the master system
+2016-06-30 10:28:21 55404 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 55.174 seconds (JVM running for 55.656)
+2016-06-30 10:28:21 55404 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 10:28:21 55431 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 10:28:21 55432 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 10:28:21 55432 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 10:28:21 55432 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 10:28:21 55433 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 10:28:21 55433 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 10:28:21 55433 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 10:28:21 55434 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 10:28:21 55435 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 10:28:21 55436 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 10:28:21 55437 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 10:28:21 55439 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 11:48:20 643  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 8512 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 11:48:20 644  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 11:48:23 3846 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 11:48:23 4118 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 11:48:26 632  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 10460 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 11:48:26 633  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 11:48:29 3665 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 11:48:29 3852 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 11:48:35 10297 [main] INFO  c.s.message.init.InitSystemMode - this is the master system
+2016-06-30 11:48:37 11476 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 11.295 seconds (JVM running for 11.649)
+2016-06-30 11:48:37 11476 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 11:48:37 11480 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 11:48:37 11483 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 11:48:37 11483 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 11:48:37 11484 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 11:48:37 11485 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 11:48:37 11485 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 11:48:37 11485 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 11:48:37 11485 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 11:48:37 11486 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 11:48:37 11487 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 11:48:37 11489 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 11:48:37 11490 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 11:50:19 119912 [main] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (172.16.14.84:2181,172.16.14.84:2182,172.16.14.84:2183) and timeout (15000) / elapsed (15018)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:116)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:489)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:721)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:704)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:108)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:701)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:477)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:467)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.softisland.curator.framework.CuratorCrudUtils.createEphemeral(CuratorCrudUtils.java:43)
+	at com.softisland.message.init.InitSystemMode.createTempData(InitSystemMode.java:137)
+	at com.softisland.message.init.InitSystemMode.initHA(InitSystemMode.java:98)
+	at com.softisland.message.init.InitSystemMode.initSystemMode(InitSystemMode.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:178)
+2016-06-30 11:50:35 135924 [main] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (172.16.14.84:2181,172.16.14.84:2182,172.16.14.84:2183) and timeout (15000) / elapsed (31036)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:116)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:489)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:721)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:704)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:108)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:701)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:477)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:467)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.softisland.curator.framework.CuratorCrudUtils.createEphemeral(CuratorCrudUtils.java:43)
+	at com.softisland.message.init.InitSystemMode.createTempData(InitSystemMode.java:137)
+	at com.softisland.message.init.InitSystemMode.initHA(InitSystemMode.java:98)
+	at com.softisland.message.init.InitSystemMode.initSystemMode(InitSystemMode.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:178)
+2016-06-30 11:50:51 151939 [main] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (172.16.14.84:2181,172.16.14.84:2182,172.16.14.84:2183) and timeout (15000) / elapsed (47051)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:116)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:489)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:721)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:704)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:108)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:701)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:477)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:467)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.softisland.curator.framework.CuratorCrudUtils.createEphemeral(CuratorCrudUtils.java:43)
+	at com.softisland.message.init.InitSystemMode.createTempData(InitSystemMode.java:137)
+	at com.softisland.message.init.InitSystemMode.initHA(InitSystemMode.java:98)
+	at com.softisland.message.init.InitSystemMode.initSystemMode(InitSystemMode.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:178)
+2016-06-30 11:51:11 171501 [main] ERROR c.s.message.init.InitSystemMode - create temp date exception, system exit.
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss for /message-ha-aaa-session
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:99)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:51)
+	at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:783)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:721)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:704)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:108)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:701)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:477)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:467)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.softisland.curator.framework.CuratorCrudUtils.createEphemeral(CuratorCrudUtils.java:43)
+	at com.softisland.message.init.InitSystemMode.createTempData(InitSystemMode.java:137)
+	at com.softisland.message.init.InitSystemMode.initHA(InitSystemMode.java:98)
+	at com.softisland.message.init.InitSystemMode.initSystemMode(InitSystemMode.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:178)
+2016-06-30 11:52:18 625  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 11804 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 11:52:18 626  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 11:52:21 3747 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 11:52:21 3899 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system
+2016-06-30 11:53:43 86259 [main] INFO  c.s.message.init.InitSystemMode - this is the master system
+2016-06-30 11:53:45 87630 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 87.445 seconds (JVM running for 87.793)
+2016-06-30 11:53:45 87630 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 11:53:45 87633 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 11:53:45 87634 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 11:53:45 87634 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 11:53:45 87634 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 11:53:45 87635 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 11:53:45 87636 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 11:53:45 87636 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 11:53:45 87638 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 11:53:45 87639 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 11:53:45 87640 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 11:53:45 87640 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 11:53:45 87644 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 11:59:34 645  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 11836 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 11:59:34 645  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 11:59:38 4104 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 11:59:38 4263 [main] INFO  c.s.message.init.InitSystemMode - this is the master system.
+2016-06-30 11:59:39 5551 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 5.358 seconds (JVM running for 5.721)
+2016-06-30 11:59:39 5551 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 11:59:39 5579 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 11:59:39 5580 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 11:59:39 5580 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 11:59:39 5581 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 11:59:39 5582 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 11:59:39 5582 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 11:59:39 5582 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 11:59:39 5583 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 11:59:39 5584 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 11:59:39 5585 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 11:59:39 5585 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 11:59:39 5586 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 11:59:42 632  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 10408 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 11:59:42 632  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 11:59:45 3909 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 11:59:46 4073 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system.
+2016-06-30 12:00:02 20097 [main] INFO  c.s.message.init.InitSystemMode - this is the master system.
+2016-06-30 12:00:03 21429 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 21.248 seconds (JVM running for 21.595)
+2016-06-30 12:00:03 21429 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 12:00:03 21456 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 12:00:03 21458 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 12:00:03 21458 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 12:00:03 21458 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 12:00:03 21459 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 12:00:03 21459 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 12:00:03 21459 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 12:00:03 21460 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 12:00:03 21461 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 12:00:03 21463 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 12:00:03 21464 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 12:00:03 21467 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 12:00:34 666  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 11236 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 12:00:34 666  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 12:00:37 3883 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 12:00:37 4039 [main] INFO  c.s.message.init.InitSystemMode - this is the master system.
+2016-06-30 12:00:38 5132 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 4.937 seconds (JVM running for 5.301)
+2016-06-30 12:00:38 5132 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 12:00:38 5157 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 12:00:38 5158 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 12:00:38 5159 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 12:00:38 5159 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 12:00:38 5159 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 12:00:38 5160 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 12:00:38 5160 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 12:00:38 5160 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 12:00:38 5162 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 12:00:38 5163 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 12:00:38 5163 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 12:00:38 5164 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 12:00:40 752  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 11808 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 12:00:40 770  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 12:00:44 4418 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 12:00:44 4564 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system.
+2016-06-30 12:02:03 84021 [main] INFO  c.s.message.init.InitSystemMode - this is the master system.
+2016-06-30 12:02:05 85260 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 85.038 seconds (JVM running for 85.454)
+2016-06-30 12:02:05 85261 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 12:02:05 85289 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 12:02:05 85290 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 12:02:05 85290 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 12:02:05 85290 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 12:02:05 85291 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 12:02:05 85291 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 12:02:05 85291 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 12:02:05 85291 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 12:02:05 85291 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 12:02:05 85293 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 12:02:05 85294 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 12:02:05 85296 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 12:03:21 614  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 11596 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 12:03:21 616  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 12:03:24 3760 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 12:03:24 3930 [main] INFO  c.s.message.init.InitSystemMode - this is the master system.
+2016-06-30 12:03:25 5101 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 4.92 seconds (JVM running for 5.272)
+2016-06-30 12:03:25 5101 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 12:03:25 5105 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 12:03:25 5106 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 12:03:25 5106 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 12:03:25 5106 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 12:03:25 5107 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 12:03:25 5107 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 12:03:25 5108 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 12:03:25 5109 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 12:03:25 5110 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 12:03:25 5112 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 12:03:25 5113 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 12:03:25 5115 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 12:03:35 656  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 8120 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 12:03:35 656  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 12:03:38 3806 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 12:03:39 3993 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system.
+2016-06-30 12:04:32 56919 [main] INFO  c.s.message.init.InitSystemMode - this is the master system.
+2016-06-30 12:04:33 58043 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 57.862 seconds (JVM running for 58.215)
+2016-06-30 12:04:33 58043 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 12:04:33 58071 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 12:04:33 58072 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 12:04:33 58072 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 12:04:33 58073 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 12:04:33 58073 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 12:04:33 58073 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 12:04:33 58074 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 12:04:33 58072 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 12:04:33 58075 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 12:04:33 58076 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 12:04:33 58077 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 12:04:33 58078 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 12:05:17 624  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 7388 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 12:05:17 626  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 12:05:20 3735 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 12:05:20 3875 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system.
+2016-06-30 12:06:34 77825 [main] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (172.16.14.84:2181,172.16.14.84:2182,172.16.14.84:2183) and timeout (15000) / elapsed (15018)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:116)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:489)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:721)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:704)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:108)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:701)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:477)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:467)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.softisland.curator.framework.CuratorCrudUtils.createEphemeral(CuratorCrudUtils.java:43)
+	at com.softisland.message.init.InitSystemMode.createTempData(InitSystemMode.java:137)
+	at com.softisland.message.init.InitSystemMode.initHA(InitSystemMode.java:98)
+	at com.softisland.message.init.InitSystemMode.initSystemMode(InitSystemMode.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:178)
+2016-06-30 12:06:50 93839 [main] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (172.16.14.84:2181,172.16.14.84:2182,172.16.14.84:2183) and timeout (15000) / elapsed (31038)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:116)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:489)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:721)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:704)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:108)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:701)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:477)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:467)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.softisland.curator.framework.CuratorCrudUtils.createEphemeral(CuratorCrudUtils.java:43)
+	at com.softisland.message.init.InitSystemMode.createTempData(InitSystemMode.java:137)
+	at com.softisland.message.init.InitSystemMode.initHA(InitSystemMode.java:98)
+	at com.softisland.message.init.InitSystemMode.initSystemMode(InitSystemMode.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:178)
+2016-06-30 12:07:07 110857 [main] ERROR org.apache.curator.ConnectionState - Connection timed out for connection string (172.16.14.84:2181,172.16.14.84:2182,172.16.14.84:2183) and timeout (15000) / elapsed (48056)
+org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.curator.ConnectionState.checkTimeouts(ConnectionState.java:197)
+	at org.apache.curator.ConnectionState.getZooKeeper(ConnectionState.java:88)
+	at org.apache.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:116)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:489)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:721)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:704)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:108)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:701)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:477)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:467)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.softisland.curator.framework.CuratorCrudUtils.createEphemeral(CuratorCrudUtils.java:43)
+	at com.softisland.message.init.InitSystemMode.createTempData(InitSystemMode.java:137)
+	at com.softisland.message.init.InitSystemMode.initHA(InitSystemMode.java:98)
+	at com.softisland.message.init.InitSystemMode.initSystemMode(InitSystemMode.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:178)
+2016-06-30 12:07:25 128480 [main] ERROR c.s.message.init.InitSystemMode - create temp date exception, system exit.
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss for /message-ha-aaa-session
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:99)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:51)
+	at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:783)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:721)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:704)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:108)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:701)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:477)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:467)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.softisland.curator.framework.CuratorCrudUtils.createEphemeral(CuratorCrudUtils.java:43)
+	at com.softisland.message.init.InitSystemMode.createTempData(InitSystemMode.java:137)
+	at com.softisland.message.init.InitSystemMode.initHA(InitSystemMode.java:98)
+	at com.softisland.message.init.InitSystemMode.initSystemMode(InitSystemMode.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:178)
+2016-06-30 14:06:14 648  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 6240 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 14:06:14 648  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 14:06:17 3885 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 14:06:17 4031 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system.
+2016-06-30 14:07:00 47036 [main] INFO  c.s.message.init.InitSystemMode - this is the master system.
+2016-06-30 14:07:01 48230 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 48.032 seconds (JVM running for 48.408)
+2016-06-30 14:07:01 48230 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 14:07:01 48256 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 14:07:01 48257 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 14:07:01 48257 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 14:07:01 48257 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 14:07:01 48258 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 14:07:01 48258 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 14:07:01 48258 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 14:07:01 48259 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 14:07:01 48260 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 14:07:01 48260 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 14:07:01 48262 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 14:07:01 48264 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 14:09:13 612  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 8692 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 14:09:13 612  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 14:09:16 3639 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 14:09:16 3817 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system.
+2016-06-30 14:09:50 643  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 7292 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 14:09:50 643  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 14:09:53 3552 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 14:09:53 3704 [main] INFO  c.s.message.init.InitSystemMode - this is the master system.
+2016-06-30 14:09:55 5021 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 4.845 seconds (JVM running for 5.195)
+2016-06-30 14:09:55 5021 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 14:09:55 5049 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 14:09:55 5050 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 14:09:55 5050 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 14:09:55 5050 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 14:09:55 5050 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 14:09:55 5050 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 14:09:55 5051 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 14:09:55 5051 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 14:09:55 5053 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 14:09:55 5055 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 14:09:55 5055 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-30 14:09:55 5057 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 14:10:02 640  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 4616 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-30 14:10:02 641  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-30 14:10:06 3926 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-30 14:10:06 4069 [main] INFO  c.s.message.init.InitSystemMode - this is the slave system.
+2016-06-30 14:10:22 20238 [main] INFO  c.s.message.init.InitSystemMode - this is the master system.
+2016-06-30 14:10:23 21404 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 21.208 seconds (JVM running for 21.577)
+2016-06-30 14:10:23 21404 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-30 14:10:23 21431 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-30 14:10:23 21433 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-30 14:10:23 21433 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-30 14:10:23 21433 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-30 14:10:23 21433 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-30 14:10:23 21433 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-30 14:10:23 21434 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-30 14:10:23 21435 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-30 14:10:23 21436 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-30 14:10:23 21436 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-30 14:10:23 21437 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-30 14:10:23 21438 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.

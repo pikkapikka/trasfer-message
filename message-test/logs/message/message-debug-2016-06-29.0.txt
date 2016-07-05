@@ -1,0 +1,20 @@
+2016-06-29 09:14:57 548  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-06-29 09:14:58 579  [main] INFO  c.s.message.MessageTestApplication - Starting MessageTestApplication on PC201601212 with PID 7724 (E:\code\git\message-platform\message-test\target\classes started by Administrator in E:\code\git\message-platform\message-test)
+2016-06-29 09:14:58 579  [main] DEBUG c.s.message.MessageTestApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-06-29 09:14:58 579  [main] INFO  c.s.message.MessageTestApplication - The following profiles are active: test
+2016-06-29 09:15:01 3903 [main] INFO  c.s.message.MessageTestApplication - Started MessageTestApplication in 3.747 seconds (JVM running for 4.059)
+2016-06-29 09:29:25 624  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-06-29 09:29:26 702  [main] INFO  c.s.message.MessageTestApplication - Starting MessageTestApplication on PC201601212 with PID 6112 (E:\code\git\message-platform\message-test\target\classes started by Administrator in E:\code\git\message-platform\message-test)
+2016-06-29 09:29:26 702  [main] DEBUG c.s.message.MessageTestApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-06-29 09:29:26 702  [main] INFO  c.s.message.MessageTestApplication - The following profiles are active: test
+2016-06-29 09:29:29 4592 [main] INFO  c.s.message.MessageTestApplication - Started MessageTestApplication in 4.421 seconds (JVM running for 4.913)
+2016-06-29 13:30:11 660  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-06-29 13:30:11 705  [main] INFO  c.s.message.MessageTestApplication - Starting MessageTestApplication on PC201601212 with PID 8060 (E:\code\git\message-platform\message-test\target\classes started by Administrator in E:\code\git\message-platform\message-test)
+2016-06-29 13:30:11 706  [main] DEBUG c.s.message.MessageTestApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-06-29 13:30:11 706  [main] INFO  c.s.message.MessageTestApplication - The following profiles are active: test
+2016-06-29 13:30:15 4649 [main] INFO  c.s.message.MessageTestApplication - Started MessageTestApplication in 4.46 seconds (JVM running for 4.849)
+2016-06-29 17:34:24 606  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-06-29 17:34:24 638  [main] INFO  c.s.message.MessageTestApplication - Starting MessageTestApplication on PC201601212 with PID 6752 (E:\code\git\message-platform\message-test\target\classes started by Administrator in E:\code\git\message-platform\message-test)
+2016-06-29 17:34:24 638  [main] DEBUG c.s.message.MessageTestApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-06-29 17:34:24 638  [main] INFO  c.s.message.MessageTestApplication - The following profiles are active: test
+2016-06-29 17:34:28 3872 [main] INFO  c.s.message.MessageTestApplication - Started MessageTestApplication in 3.715 seconds (JVM running for 4.038)

@@ -1,0 +1,14 @@
+2016-07-05 09:12:54 636  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-05 09:12:54 668  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 8136 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-05 09:12:54 668  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-05 09:12:54 669  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-05 09:12:57 4433 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.278 seconds (JVM running for 4.612)
+2016-07-05 09:13:28 646  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 3044 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-05 09:13:28 647  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-05 09:13:28 648  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-05 09:13:32 4198 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.038 seconds (JVM running for 4.373)
+2016-07-05 09:20:18 564  [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2016-07-05 09:20:18 599  [main] INFO  c.s.m.d.app.MessageDataApplication - Starting MessageDataApplication on PC201601212 with PID 7392 (E:\code\git\message-platform\message-data\target\classes started by Administrator in E:\code\git\message-platform\message-data)
+2016-07-05 09:20:18 599  [main] DEBUG c.s.m.d.app.MessageDataApplication - Running with Spring Boot v1.3.3.RELEASE, Spring v4.2.5.RELEASE
+2016-07-05 09:20:18 599  [main] INFO  c.s.m.d.app.MessageDataApplication - The following profiles are active: test
+2016-07-05 09:20:22 4255 [main] INFO  c.s.m.d.app.MessageDataApplication - Started MessageDataApplication in 4.102 seconds (JVM running for 4.443)

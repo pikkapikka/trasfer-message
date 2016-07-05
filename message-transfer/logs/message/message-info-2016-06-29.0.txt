@@ -1,0 +1,1314 @@
+2016-06-29 09:20:17 727  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 3348 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 09:20:17 727  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 09:20:22 5338 [main] ERROR c.s.message.init.InitSystemService - get message catch exception, url=http://127.0.0.1:8082/softisland/message/notifyUrl
+org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:8082 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107)
+	at com.softisland.common.utils.HttpClientUtil.getJson(HttpClientUtil.java:431)
+	at com.softisland.common.utils.HttpClientUtil.getJson(HttpClientUtil.java:382)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.getMessage(InitializeUnReceiveMsg.java:94)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.init(InitializeUnReceiveMsg.java:72)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.postInitData(InitializeUnReceiveMsg.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:162)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 39 common frames omitted
+2016-06-29 09:20:22 5369 [main] ERROR c.s.message.init.InitSystemService - initialize the unsend data failed, so the system will exit.
+com.softisland.message.exception.IslandUncheckedException: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:8082 [/127.0.0.1] failed: Connection refused: connect
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.getMessage(InitializeUnReceiveMsg.java:107)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.init(InitializeUnReceiveMsg.java:72)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.postInitData(InitializeUnReceiveMsg.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:162)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:8082 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107)
+	at com.softisland.common.utils.HttpClientUtil.getJson(HttpClientUtil.java:431)
+	at com.softisland.common.utils.HttpClientUtil.getJson(HttpClientUtil.java:382)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.getMessage(InitializeUnReceiveMsg.java:94)
+	... 27 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 39 common frames omitted
+2016-06-29 09:22:39 734  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 7232 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 09:22:39 734  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 09:22:44 5504 [main] ERROR c.s.message.init.InitSystemService - get message catch exception, url=http://127.0.0.1:8082/softisland/message/notifyUrl
+org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:8082 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107)
+	at com.softisland.common.utils.HttpClientUtil.getJson(HttpClientUtil.java:431)
+	at com.softisland.common.utils.HttpClientUtil.getJson(HttpClientUtil.java:382)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.getMessage(InitializeUnReceiveMsg.java:94)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.init(InitializeUnReceiveMsg.java:72)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.postInitData(InitializeUnReceiveMsg.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:162)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 39 common frames omitted
+2016-06-29 09:22:44 5504 [main] ERROR c.s.message.init.InitSystemService - initialize the unsend data failed, so the system will exit.
+com.softisland.message.exception.IslandUncheckedException: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:8082 [/127.0.0.1] failed: Connection refused: connect
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.getMessage(InitializeUnReceiveMsg.java:107)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.init(InitializeUnReceiveMsg.java:72)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.postInitData(InitializeUnReceiveMsg.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:162)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:8082 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107)
+	at com.softisland.common.utils.HttpClientUtil.getJson(HttpClientUtil.java:431)
+	at com.softisland.common.utils.HttpClientUtil.getJson(HttpClientUtil.java:382)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.getMessage(InitializeUnReceiveMsg.java:94)
+	... 27 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 39 common frames omitted
+2016-06-29 09:22:45 6446 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 6.259 seconds (JVM running for 6.781)
+2016-06-29 09:22:45 6446 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 09:22:45 6478 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 09:22:45 6478 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 09:22:45 6478 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 09:22:45 6478 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 09:22:45 6478 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 09:22:45 6478 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 09:22:45 6478 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 09:22:45 6478 [Thread-8] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 09:22:45 6493 [Thread-9] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 09:22:55 16292 [http-nio-8082-exec-5] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet dispatcherServlet threw exception
+org.springframework.util.InvalidMimeTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.util.MimeTypeUtils.parseMimeType(MimeTypeUtils.java:263)
+	at org.springframework.http.MediaType.parseMediaType(MediaType.java:382)
+	at org.springframework.http.HttpHeaders.getContentType(HttpHeaders.java:722)
+	at org.springframework.http.server.ServletServerHttpRequest.getHeaders(ServletServerHttpRequest.java:116)
+	at org.springframework.web.util.WebUtils.isSameOrigin(WebUtils.java:810)
+	at org.springframework.web.cors.DefaultCorsProcessor.processRequest(DefaultCorsProcessor.java:71)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping$CorsInterceptor.preHandle(AbstractHandlerMapping.java:503)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:134)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:954)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:870)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:445)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:304)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:181)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2016-06-29 09:22:55 16293 [http-nio-8082-exec-5] ERROR o.a.c.c.C.[Tomcat].[localhost] - Exception Processing ErrorPage[errorCode=0, location=/error]
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.springframework.http.InvalidMediaTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:980)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:870)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:445)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:304)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:181)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.springframework.http.InvalidMediaTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.http.MediaType.parseMediaType(MediaType.java:385)
+	at org.springframework.http.HttpHeaders.getContentType(HttpHeaders.java:722)
+	at org.springframework.http.server.ServletServerHttpRequest.getHeaders(ServletServerHttpRequest.java:116)
+	at org.springframework.web.util.WebUtils.isSameOrigin(WebUtils.java:810)
+	at org.springframework.web.cors.DefaultCorsProcessor.processRequest(DefaultCorsProcessor.java:71)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping$CorsInterceptor.preHandle(AbstractHandlerMapping.java:503)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:134)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:954)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968)
+	... 24 common frames omitted
+Caused by: org.springframework.util.InvalidMimeTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.util.MimeTypeUtils.parseMimeType(MimeTypeUtils.java:263)
+	at org.springframework.http.MediaType.parseMediaType(MediaType.java:382)
+	... 33 common frames omitted
+2016-06-29 09:23:09 30807 [http-nio-8082-exec-7] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - remove a message queue for site, siteId=site2.
+2016-06-29 09:23:09 30807 [http-nio-8082-exec-7] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - send interrupt to thread for site, siteId=site2.
+2016-06-29 09:23:09 30807 [siteId-site2-send-message-thread] ERROR c.s.m.b.m.s.t.SiteMessageSendThread - sleep thread catch exception, so it will close. name=siteId-site2-send-message-thread.
+2016-06-29 09:23:09 30807 [siteId-site2-send-message-thread] ERROR c.s.m.b.m.s.t.SiteMessageSendThread - sleep thread catch exception, error is:
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method)
+	at java.lang.Thread.sleep(Unknown Source)
+	at java.util.concurrent.TimeUnit.sleep(Unknown Source)
+	at com.softisland.message.business.message.service.thread.SiteMessageSendThread.sleep(SiteMessageSendThread.java:111)
+	at com.softisland.message.business.message.service.thread.SiteMessageSendThread.run(SiteMessageSendThread.java:83)
+2016-06-29 09:23:09 30807 [http-nio-8082-exec-7] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - thread for site is closed, siteId=site2.
+2016-06-29 09:23:09 30807 [http-nio-8082-exec-7] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - remove a thread for site success. siteId=site2.
+2016-06-29 09:23:11 32582 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - cancel timer for site, id=site2.
+2016-06-29 09:23:17 38089 [http-nio-8082-exec-10] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - remove a message queue for site, siteId=site1.
+2016-06-29 09:23:17 38089 [http-nio-8082-exec-10] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - send interrupt to thread for site, siteId=site1.
+2016-06-29 09:23:17 38089 [siteId-site1-send-message-thread] ERROR c.s.m.b.m.s.t.SiteMessageSendThread - sleep thread catch exception, so it will close. name=siteId-site1-send-message-thread.
+2016-06-29 09:23:17 38105 [siteId-site1-send-message-thread] ERROR c.s.m.b.m.s.t.SiteMessageSendThread - sleep thread catch exception, error is:
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method)
+	at java.lang.Thread.sleep(Unknown Source)
+	at java.util.concurrent.TimeUnit.sleep(Unknown Source)
+	at com.softisland.message.business.message.service.thread.SiteMessageSendThread.sleep(SiteMessageSendThread.java:111)
+	at com.softisland.message.business.message.service.thread.SiteMessageSendThread.run(SiteMessageSendThread.java:83)
+2016-06-29 09:23:17 38105 [http-nio-8082-exec-10] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - thread for site is closed, siteId=site1.
+2016-06-29 09:23:17 38105 [http-nio-8082-exec-10] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - remove a thread for site success. siteId=site1.
+2016-06-29 09:23:17 38618 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:23:17 38618 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:23:20 41637 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:23:20 41637 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:23:23 44649 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:23:23 44649 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:23:26 47663 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:23:26 47663 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:23:29 50676 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:23:29 50676 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:23:32 53690 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:23:32 53690 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:23:35 56704 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:23:35 56704 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:04 749  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 4932 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 09:24:04 750  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 09:24:08 4370 [main] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:08 4370 [main] INFO  c.s.message.init.InitSystemService - there is no register site.
+2016-06-29 09:24:09 5357 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 5.154 seconds (JVM running for 5.549)
+2016-06-29 09:24:09 5357 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 09:24:09 5357 [main] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:09 5357 [main] INFO  c.s.m.b.s.service.InitSiteService - there is no register site.
+2016-06-29 09:24:09 5357 [Thread-6] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 09:24:09 5357 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 09:24:09 5357 [Thread-7] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 09:24:11 7199 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:11 7199 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:14 10214 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:14 10214 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:17 13227 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:17 13227 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:20 16241 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:20 16241 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:23 19255 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:23 19255 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:26 22270 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:26 22270 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:29 25283 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:29 25283 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:32 28293 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:32 28294 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:35 31308 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:35 31308 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:38 34315 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:38 34315 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:41 37329 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:41 37329 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:44 40343 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:44 40343 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:47 43351 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:47 43351 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:50 46360 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:50 46360 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:24:53 49376 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:24:53 49376 [pool-2-thread-1] WARN  c.s.m.business.ping.PingSiteService - there is no register site. so will clean the schedule tasks.
+2016-06-29 09:26:13 718  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 4576 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 09:26:13 718  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 09:26:17 4173 [main] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:17 4188 [main] INFO  c.s.message.init.InitSystemService - there is no register site.
+2016-06-29 09:26:18 5143 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 4.941 seconds (JVM running for 5.446)
+2016-06-29 09:26:18 5143 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 09:26:18 5143 [main] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:18 5143 [main] INFO  c.s.m.b.s.service.InitSiteService - there is no register site.
+2016-06-29 09:26:18 5143 [Thread-6] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 09:26:18 5143 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 09:26:18 5143 [Thread-7] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 09:26:20 7078 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:23 10086 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:26 13100 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:29 16115 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:32 19128 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:35 22145 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:38 25164 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:41 28173 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:44 31192 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:47 34205 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:50 37218 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:53 40232 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:56 43246 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:26:59 46261 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:27:02 49275 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:27:05 52290 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:27:08 55303 [pool-2-thread-1] WARN  c.s.m.b.s.s.i.SiteBaseServiceImpl - there is no data about site from site.
+2016-06-29 09:27:11 58292 [http-nio-8082-exec-1] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 09:27:11 58308 [http-nio-8082-exec-1] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 09:27:11 58308 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 09:27:33 79980 [http-nio-8082-exec-2] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 09:27:33 79981 [http-nio-8082-exec-2] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 09:27:33 79981 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 09:28:03 718  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 7836 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 09:28:03 718  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 09:28:33 31277 [main] ERROR c.s.message.init.InitSystemService - get message failed, url=http://127.0.0.1:8084/softisland/message/test/unsend, httpcode=405.
+2016-06-29 09:28:33 31292 [main] ERROR c.s.message.init.InitSystemService - initialize the unsend data failed, so the system will exit.
+com.softisland.message.exception.IslandUncheckedException: 405
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.getMessage(InitializeUnReceiveMsg.java:98)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.init(InitializeUnReceiveMsg.java:72)
+	at com.softisland.message.business.message.initialize.InitializeUnReceiveMsg.postInitData(InitializeUnReceiveMsg.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:162)
+2016-06-29 09:29:39 734  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 6604 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 09:29:39 734  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 09:30:41 62588 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 62.385 seconds (JVM running for 62.777)
+2016-06-29 09:30:41 62588 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 09:30:41 62619 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 09:30:41 62619 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 09:30:41 62619 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 09:30:41 62619 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 09:30:41 62619 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 09:30:41 62619 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 09:30:41 62619 [Thread-8] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 09:30:41 62619 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 09:30:41 62619 [Thread-9] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 09:30:42 63322 [Thread-8] ERROR c.s.m.b.m.s.i.SiteMessageServiceImpl - offer message to queue of site failed, may be is full, meesgae=MessageInfo [uuid=e8776f40-5034-4482-846d-23cc1585da8e, receiveTime=1467163840113, getMessageId()=id9, getFromSite()=site1, getReceiveSites()=null, getDelay()=null, isNeedNotify()=true, getMessageType()=msgType_xxx, getMessage()=xxxxxxxxxx, getTimestamp()=vvvvvvvvvv, getSalt()=a1e418ec008b4f30321a749c2d085751, isInvalid()=false]. site=site2.
+2016-06-29 09:33:07 208574 [siteId-site2-send-message-thread] ERROR c.s.m.b.m.s.i.MessageSendServiceImpl - get unsend message failed, dstSite=site2
+org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:162)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:251)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:58)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:128)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:91)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:78)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:178)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:153)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:86)
+	at org.springframework.data.redis.core.DefaultHashOperations.get(DefaultHashOperations.java:48)
+	at com.softisland.bean.utils.JRedisUtils.getHashValueByKey(JRedisUtils.java:74)
+	at com.softisland.message.business.message.service.impl.MessageSendServiceImpl.getSendingMessage(MessageSendServiceImpl.java:144)
+	at com.softisland.message.business.message.service.thread.SiteMessageSendThread.tryDoSendingMessage(SiteMessageSendThread.java:153)
+	at com.softisland.message.business.message.service.thread.SiteMessageSendThread.run(SiteMessageSendThread.java:73)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:82)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1641)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:159)
+	... 13 common frames omitted
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 16 common frames omitted
+2016-06-29 09:33:07 208574 [siteId-site2-send-message-thread] ERROR c.s.m.b.m.s.t.SiteMessageSendThread - get sending message catch exception, error is:
+com.softisland.message.exception.IslandUncheckedException: org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at com.softisland.message.business.message.service.impl.MessageSendServiceImpl.getSendingMessage(MessageSendServiceImpl.java:155)
+	at com.softisland.message.business.message.service.thread.SiteMessageSendThread.tryDoSendingMessage(SiteMessageSendThread.java:153)
+	at com.softisland.message.business.message.service.thread.SiteMessageSendThread.run(SiteMessageSendThread.java:73)
+Caused by: org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:162)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:251)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:58)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:128)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:91)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:78)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:178)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:153)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:86)
+	at org.springframework.data.redis.core.DefaultHashOperations.get(DefaultHashOperations.java:48)
+	at com.softisland.bean.utils.JRedisUtils.getHashValueByKey(JRedisUtils.java:74)
+	at com.softisland.message.business.message.service.impl.MessageSendServiceImpl.getSendingMessage(MessageSendServiceImpl.java:144)
+	... 2 common frames omitted
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:82)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1641)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:159)
+	... 13 common frames omitted
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 16 common frames omitted
+2016-06-29 09:33:07 208606 [Thread-8] WARN  c.s.m.b.m.s.i.OriginalMessageSrvImpl - take message from queue failed.
+org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:162)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:251)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:58)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:128)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:91)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:78)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:178)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:153)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:86)
+	at org.springframework.data.redis.core.DefaultListOperations.index(DefaultListOperations.java:41)
+	at org.springframework.data.redis.core.DefaultBoundListOperations.index(DefaultBoundListOperations.java:48)
+	at com.softisland.bean.utils.JRedisUtils.getValueFromList(JRedisUtils.java:181)
+	at com.softisland.message.business.message.service.impl.OriginalMessageSrvImpl.getAvaliableMessage(OriginalMessageSrvImpl.java:57)
+	at com.softisland.message.business.message.service.thread.MessageDistributeTask.run(MessageDistributeTask.java:59)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:82)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1641)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:159)
+	... 14 common frames omitted
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 17 common frames omitted
+2016-06-29 09:33:07 208606 [Thread-8] ERROR c.s.m.b.m.s.t.MessageDistributeTask - distribute message catch exception.
+com.softisland.message.exception.IslandUncheckedException: org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at com.softisland.message.business.message.service.impl.OriginalMessageSrvImpl.getAvaliableMessage(OriginalMessageSrvImpl.java:68)
+	at com.softisland.message.business.message.service.thread.MessageDistributeTask.run(MessageDistributeTask.java:59)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:162)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:251)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:58)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:128)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:91)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:78)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:178)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:153)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:86)
+	at org.springframework.data.redis.core.DefaultListOperations.index(DefaultListOperations.java:41)
+	at org.springframework.data.redis.core.DefaultBoundListOperations.index(DefaultBoundListOperations.java:48)
+	at com.softisland.bean.utils.JRedisUtils.getValueFromList(JRedisUtils.java:181)
+	at com.softisland.message.business.message.service.impl.OriginalMessageSrvImpl.getAvaliableMessage(OriginalMessageSrvImpl.java:57)
+	... 2 common frames omitted
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: connect timed out
+	at redis.clients.jedis.Connection.connect(Connection.java:164)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:82)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1641)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:159)
+	... 14 common frames omitted
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at redis.clients.jedis.Connection.connect(Connection.java:158)
+	... 17 common frames omitted
+2016-06-29 09:36:44 425881 [http-nio-8082-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet dispatcherServlet threw exception
+org.springframework.util.InvalidMimeTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.util.MimeTypeUtils.parseMimeType(MimeTypeUtils.java:263)
+	at org.springframework.http.MediaType.parseMediaType(MediaType.java:382)
+	at org.springframework.http.HttpHeaders.getContentType(HttpHeaders.java:722)
+	at org.springframework.http.server.ServletServerHttpRequest.getHeaders(ServletServerHttpRequest.java:116)
+	at org.springframework.web.util.WebUtils.isSameOrigin(WebUtils.java:810)
+	at org.springframework.web.cors.DefaultCorsProcessor.processRequest(DefaultCorsProcessor.java:71)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping$CorsInterceptor.preHandle(AbstractHandlerMapping.java:503)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:134)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:954)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:870)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:445)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:304)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:181)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2016-06-29 09:36:44 425881 [http-nio-8082-exec-1] ERROR o.a.c.c.C.[Tomcat].[localhost] - Exception Processing ErrorPage[errorCode=0, location=/error]
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.springframework.http.InvalidMediaTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:980)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:870)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:445)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:304)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:181)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.springframework.http.InvalidMediaTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.http.MediaType.parseMediaType(MediaType.java:385)
+	at org.springframework.http.HttpHeaders.getContentType(HttpHeaders.java:722)
+	at org.springframework.http.server.ServletServerHttpRequest.getHeaders(ServletServerHttpRequest.java:116)
+	at org.springframework.web.util.WebUtils.isSameOrigin(WebUtils.java:810)
+	at org.springframework.web.cors.DefaultCorsProcessor.processRequest(DefaultCorsProcessor.java:71)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping$CorsInterceptor.preHandle(AbstractHandlerMapping.java:503)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:134)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:954)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968)
+	... 24 common frames omitted
+Caused by: org.springframework.util.InvalidMimeTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.util.MimeTypeUtils.parseMimeType(MimeTypeUtils.java:263)
+	at org.springframework.http.MediaType.parseMediaType(MediaType.java:382)
+	... 33 common frames omitted
+2016-06-29 13:25:33 716  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 3264 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 13:25:33 733  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 13:25:48 15887 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 15.689 seconds (JVM running for 16.095)
+2016-06-29 13:25:48 15887 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 13:25:48 15915 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 13:25:48 15916 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 13:25:48 15916 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 13:25:48 15916 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 13:25:48 15917 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 13:25:48 15917 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 13:25:48 15918 [Thread-8] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 13:25:48 15920 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 13:25:48 15921 [Thread-9] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 13:29:57 592  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 6404 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 13:29:57 593  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 13:35:31 687  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 4780 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 13:35:31 692  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 13:35:37 6173 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 5.972 seconds (JVM running for 6.464)
+2016-06-29 13:35:37 6175 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 13:35:37 6201 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 13:35:37 6203 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 13:35:37 6203 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 13:35:37 6203 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 13:35:37 6204 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 13:35:37 6206 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 13:35:37 6207 [Thread-9] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 13:35:37 6208 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 13:35:37 6210 [Thread-8] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 13:43:37 769  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 1316 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 13:43:37 769  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 13:43:42 6365 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 6.138 seconds (JVM running for 6.634)
+2016-06-29 13:43:42 6365 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 13:43:43 6395 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 13:43:43 6396 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 13:43:43 6396 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 13:43:43 6396 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 13:43:43 6397 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 13:43:43 6397 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 13:43:43 6399 [Thread-8] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 13:43:43 6399 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 13:43:43 6401 [Thread-9] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 13:44:34 58094 [Thread-9] ERROR c.s.m.b.m.s.i.MessageNotifyServiceImpl - get response number failed, messageUuid=1d220b3f-2247-479f-9401-2576995fa57b
+java.lang.ClassCastException: com.alibaba.fastjson.JSONObject cannot be cast to java.lang.String
+	at com.softisland.message.business.message.service.impl.MessageNotifyServiceImpl.getMessageResponseSize(MessageNotifyServiceImpl.java:227)
+	at com.softisland.message.business.message.service.thread.MessageNotifyTask.tryNotifyResponse(MessageNotifyTask.java:99)
+	at com.softisland.message.business.message.service.thread.MessageNotifyTask.run(MessageNotifyTask.java:62)
+	at java.lang.Thread.run(Unknown Source)
+2016-06-29 13:44:34 58109 [Thread-9] ERROR c.s.m.b.m.s.t.MessageNotifyTask - send notify message result exception: 
+com.softisland.message.exception.IslandUncheckedException: java.lang.ClassCastException: com.alibaba.fastjson.JSONObject cannot be cast to java.lang.String
+	at com.softisland.message.business.message.service.impl.MessageNotifyServiceImpl.getMessageResponseSize(MessageNotifyServiceImpl.java:239)
+	at com.softisland.message.business.message.service.thread.MessageNotifyTask.tryNotifyResponse(MessageNotifyTask.java:99)
+	at com.softisland.message.business.message.service.thread.MessageNotifyTask.run(MessageNotifyTask.java:62)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.ClassCastException: com.alibaba.fastjson.JSONObject cannot be cast to java.lang.String
+	at com.softisland.message.business.message.service.impl.MessageNotifyServiceImpl.getMessageResponseSize(MessageNotifyServiceImpl.java:227)
+	... 3 common frames omitted
+2016-06-29 14:42:37 3540935 [http-nio-8082-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet dispatcherServlet threw exception
+org.springframework.util.InvalidMimeTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.util.MimeTypeUtils.parseMimeType(MimeTypeUtils.java:263)
+	at org.springframework.http.MediaType.parseMediaType(MediaType.java:382)
+	at org.springframework.http.HttpHeaders.getContentType(HttpHeaders.java:722)
+	at org.springframework.http.server.ServletServerHttpRequest.getHeaders(ServletServerHttpRequest.java:116)
+	at org.springframework.web.util.WebUtils.isSameOrigin(WebUtils.java:810)
+	at org.springframework.web.cors.DefaultCorsProcessor.processRequest(DefaultCorsProcessor.java:71)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping$CorsInterceptor.preHandle(AbstractHandlerMapping.java:503)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:134)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:954)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:870)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:445)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:304)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:181)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2016-06-29 14:42:37 3540937 [http-nio-8082-exec-1] ERROR o.a.c.c.C.[Tomcat].[localhost] - Exception Processing ErrorPage[errorCode=0, location=/error]
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.springframework.http.InvalidMediaTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:980)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:870)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:445)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:304)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:181)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.springframework.http.InvalidMediaTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.http.MediaType.parseMediaType(MediaType.java:385)
+	at org.springframework.http.HttpHeaders.getContentType(HttpHeaders.java:722)
+	at org.springframework.http.server.ServletServerHttpRequest.getHeaders(ServletServerHttpRequest.java:116)
+	at org.springframework.web.util.WebUtils.isSameOrigin(WebUtils.java:810)
+	at org.springframework.web.cors.DefaultCorsProcessor.processRequest(DefaultCorsProcessor.java:71)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping$CorsInterceptor.preHandle(AbstractHandlerMapping.java:503)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:134)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:954)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968)
+	... 24 common frames omitted
+Caused by: org.springframework.util.InvalidMimeTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.util.MimeTypeUtils.parseMimeType(MimeTypeUtils.java:263)
+	at org.springframework.http.MediaType.parseMediaType(MediaType.java:382)
+	... 33 common frames omitted
+2016-06-29 14:42:53 3557085 [http-nio-8082-exec-2] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-29 14:42:53 3557085 [http-nio-8082-exec-2] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-29 14:42:53 3557085 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-29 14:49:34 3958187 [http-nio-8082-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet dispatcherServlet threw exception
+org.springframework.util.InvalidMimeTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.util.MimeTypeUtils.parseMimeType(MimeTypeUtils.java:263)
+	at org.springframework.http.MediaType.parseMediaType(MediaType.java:382)
+	at org.springframework.http.HttpHeaders.getContentType(HttpHeaders.java:722)
+	at org.springframework.http.server.ServletServerHttpRequest.getHeaders(ServletServerHttpRequest.java:116)
+	at org.springframework.web.util.WebUtils.isSameOrigin(WebUtils.java:810)
+	at org.springframework.web.cors.DefaultCorsProcessor.processRequest(DefaultCorsProcessor.java:71)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping$CorsInterceptor.preHandle(AbstractHandlerMapping.java:503)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:134)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:954)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:870)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:445)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:304)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:181)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2016-06-29 14:49:34 3958188 [http-nio-8082-exec-3] ERROR o.a.c.c.C.[Tomcat].[localhost] - Exception Processing ErrorPage[errorCode=0, location=/error]
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.springframework.http.InvalidMediaTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:980)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:870)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:445)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:304)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:181)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.springframework.http.InvalidMediaTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.http.MediaType.parseMediaType(MediaType.java:385)
+	at org.springframework.http.HttpHeaders.getContentType(HttpHeaders.java:722)
+	at org.springframework.http.server.ServletServerHttpRequest.getHeaders(ServletServerHttpRequest.java:116)
+	at org.springframework.web.util.WebUtils.isSameOrigin(WebUtils.java:810)
+	at org.springframework.web.cors.DefaultCorsProcessor.processRequest(DefaultCorsProcessor.java:71)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping$CorsInterceptor.preHandle(AbstractHandlerMapping.java:503)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:134)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:954)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968)
+	... 24 common frames omitted
+Caused by: org.springframework.util.InvalidMimeTypeException: Invalid mime type "application/json, application/json": Invalid token character ',' in token "json, application/json"
+	at org.springframework.util.MimeTypeUtils.parseMimeType(MimeTypeUtils.java:263)
+	at org.springframework.http.MediaType.parseMediaType(MediaType.java:382)
+	... 33 common frames omitted
+2016-06-29 15:44:22 765  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 7312 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 15:44:22 765  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 15:44:34 731  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 6608 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 15:44:34 731  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 15:49:28 307034 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 306.826 seconds (JVM running for 307.371)
+2016-06-29 15:49:28 307034 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 15:49:28 307050 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-29 15:49:28 307066 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-29 15:49:28 307066 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-29 15:49:28 307066 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 15:49:28 307066 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 15:49:28 307067 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 15:49:28 307067 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 15:49:28 307068 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 15:49:28 307068 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 15:49:28 307071 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 15:49:28 307074 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 15:49:28 307080 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 15:49:41 306857 [main] ERROR o.a.coyote.http11.Http11NioProtocol - Failed to start end point associated with ProtocolHandler ["http-nio-8082"]
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:340)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:765)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:473)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:986)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:239)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:194)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:151)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:293)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:162)
+2016-06-29 15:49:41 306857 [main] ERROR o.a.catalina.core.StandardService - Failed to start connector [Connector[HTTP/1.1-8082]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8082]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:153)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:239)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:194)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:151)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:293)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:162)
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:993)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	... 13 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:340)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:765)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:473)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:986)
+	... 14 common frames omitted
+2016-06-29 15:49:41 306952 [main] ERROR o.s.boot.SpringApplication - Application startup failed
+org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat servlet container
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:165)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:293)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:162)
+Caused by: java.lang.IllegalStateException: Tomcat connector in failed state
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:159)
+	... 10 common frames omitted
+2016-06-29 17:34:55 635  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 7224 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 17:34:55 635  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 17:35:54 614  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 8016 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 17:35:54 614  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 17:35:59 5754 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 5.542 seconds (JVM running for 5.963)
+2016-06-29 17:35:59 5754 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 17:35:59 5770 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-29 17:35:59 5770 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-29 17:35:59 5770 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-29 17:35:59 5770 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 17:35:59 5770 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 17:35:59 5770 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 17:35:59 5770 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 17:35:59 5770 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 17:35:59 5770 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 17:35:59 5770 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 17:35:59 5770 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 17:35:59 5770 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 17:37:02 711  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 4272 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 17:37:03 727  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 17:37:07 5602 [main] ERROR o.s.boot.SpringApplication - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'initSystemMode': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.lang.String com.softisland.message.init.InitSystemMode.zkConStr; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'zookeeper.connection.str' in string value "${zookeeper.connection.str}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:162)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.lang.String com.softisland.message.init.InitSystemMode.zkConStr; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'zookeeper.connection.str' in string value "${zookeeper.connection.str}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:573)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 17 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'zookeeper.connection.str' in string value "${zookeeper.connection.str}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:204)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:178)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:808)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1027)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:545)
+	... 19 common frames omitted
+2016-06-29 17:38:30 629  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 3084 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 17:38:30 629  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 17:38:35 5595 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 5.408 seconds (JVM running for 5.761)
+2016-06-29 17:38:35 5595 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 17:38:35 5610 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 17:38:35 5626 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 17:38:35 5626 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 17:38:35 5626 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 17:38:35 5626 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 17:38:35 5626 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-29 17:38:35 5626 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-29 17:38:35 5626 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-29 17:38:35 5626 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 17:38:35 5626 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 17:38:35 5626 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 17:38:35 5626 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 17:41:49 610  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 6148 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 17:41:49 626  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 17:41:54 5330 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 5.126 seconds (JVM running for 5.494)
+2016-06-29 17:41:54 5330 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 17:41:54 5330 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-29 17:41:54 5330 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-29 17:41:54 5330 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-29 17:41:54 5330 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 17:41:54 5330 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 17:41:54 5330 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 17:41:54 5330 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 17:41:54 5330 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 17:41:54 5330 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 17:41:54 5346 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 17:41:54 5346 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 17:41:54 5346 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 17:42:37 745  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 7388 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 17:42:37 745  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 17:42:58 21694 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 21.503 seconds (JVM running for 21.929)
+2016-06-29 17:42:58 21694 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 17:42:58 21721 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 17:42:58 21723 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 17:42:58 21723 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 17:42:58 21723 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 17:42:58 21723 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 17:42:58 21723 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-29 17:42:58 21724 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 17:42:58 21724 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-29 17:42:58 21725 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-29 17:42:58 21728 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 17:42:58 21728 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 17:42:58 21736 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 17:43:44 608  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 3100 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 17:43:44 608  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 17:43:49 5557 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 5.386 seconds (JVM running for 5.74)
+2016-06-29 17:43:49 5557 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 17:43:49 5589 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-29 17:43:49 5589 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-29 17:43:49 5589 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-29 17:43:49 5589 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 17:43:49 5589 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 17:43:49 5589 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 17:43:49 5589 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 17:43:49 5589 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 17:43:49 5589 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 17:43:49 5589 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 17:43:49 5589 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 17:43:49 5589 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 17:45:32 645  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 6156 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 17:45:32 645  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 17:45:37 4910 [main] INFO  c.s.message.init.InitSystemMode - system start mode is SINGLETON.
+2016-06-29 17:45:37 5439 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 5.225 seconds (JVM running for 5.613)
+2016-06-29 17:45:37 5439 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 17:45:37 5455 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 17:45:37 5455 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 17:45:37 5455 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 17:45:37 5455 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-29 17:45:37 5455 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-29 17:45:37 5455 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 17:45:37 5470 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 17:45:37 5470 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 17:45:37 5470 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 17:45:37 5470 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 17:45:37 5470 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-29 17:45:37 5470 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 17:47:01 631  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 5452 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 17:47:01 631  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 17:47:05 4785 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-29 17:47:05 4785 [main] ERROR c.s.message.init.InitSystemMode - there is no appId parameter with HA mode, system exit.
+2016-06-29 17:49:27 639  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 4908 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 17:49:27 639  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 17:49:31 4771 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-29 17:49:31 4771 [main] ERROR c.s.message.init.InitSystemMode - there is no appId parameter with HA mode, system exit.
+2016-06-29 17:52:33 735  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 6048 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 17:52:33 736  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 17:52:37 5012 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-29 17:52:38 5232 [main] ERROR c.s.message.init.InitSystemMode - create temp date exception, system exit.
+java.lang.IllegalArgumentException: Path must start with / character
+	at org.apache.curator.utils.PathUtils.validatePath(PathUtils.java:54)
+	at org.apache.curator.utils.PathUtils.validatePath(PathUtils.java:37)
+	at org.apache.curator.utils.ZKPaths.fixForNamespace(ZKPaths.java:105)
+	at org.apache.curator.framework.imps.NamespaceImpl.fixForNamespace(NamespaceImpl.java:104)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.fixForNamespace(CuratorFrameworkImpl.java:599)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:458)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.softisland.curator.framework.CuratorCrudUtils.createEphemeral(CuratorCrudUtils.java:43)
+	at com.softisland.message.init.InitSystemMode.createTempData(InitSystemMode.java:87)
+	at com.softisland.message.init.InitSystemMode.initSystemMode(InitSystemMode.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:175)
+2016-06-29 17:54:10 571  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 4260 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 17:54:10 571  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 17:54:14 4957 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-29 17:54:15 5137 [main] ERROR c.s.message.init.InitSystemMode - create temp date exception, system exit.
+org.apache.zookeeper.KeeperException$NoNodeException: KeeperErrorCode = NoNode for /message/ha/aaa/session
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:111)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:51)
+	at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:783)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:721)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:704)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:108)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:701)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:477)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:467)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.softisland.curator.framework.CuratorCrudUtils.createEphemeral(CuratorCrudUtils.java:43)
+	at com.softisland.message.init.InitSystemMode.createTempData(InitSystemMode.java:87)
+	at com.softisland.message.init.InitSystemMode.initSystemMode(InitSystemMode.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:175)
+2016-06-29 18:03:27 587  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 6464 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 18:03:27 587  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 18:03:31 4933 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-29 18:03:31 5097 [main] INFO  c.s.message.init.InitSystemMode - this is the master system
+2016-06-29 18:03:32 5785 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 5.604 seconds (JVM running for 5.944)
+2016-06-29 18:03:32 5785 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 18:03:32 5801 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 18:03:32 5801 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 18:03:32 5801 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 18:03:32 5801 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 18:03:32 5801 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 18:03:32 5801 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 18:03:32 5801 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-29 18:03:32 5801 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-29 18:03:32 5801 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-29 18:03:32 5801 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 18:03:32 5816 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 18:03:32 5816 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
+2016-06-29 18:05:39 599  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 7528 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 18:05:39 599  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 18:05:44 5027 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-29 18:05:44 5215 [main] ERROR c.s.message.init.InitSystemMode - create temp date exception, system exit.
+org.apache.zookeeper.KeeperException$NodeExistsException: KeeperErrorCode = NodeExists for /message-ha-aaa-session
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:119)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:51)
+	at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:783)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:721)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:704)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:108)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:701)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:477)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:467)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.softisland.curator.framework.CuratorCrudUtils.createEphemeral(CuratorCrudUtils.java:43)
+	at com.softisland.message.init.InitSystemMode.createTempData(InitSystemMode.java:87)
+	at com.softisland.message.init.InitSystemMode.initSystemMode(InitSystemMode.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:354)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.createAndRefreshContext(SpringApplication.java:361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180)
+	at com.softisland.message.app.MessagePlatApplication.main(MessagePlatApplication.java:175)
+2016-06-29 18:06:20 666  [main] INFO  c.s.m.app.MessagePlatApplication - Starting MessagePlatApplication on PC201601212 with PID 6436 (E:\code\git\message-platform\message-transfer\target\classes started by Administrator in E:\code\git\message-platform\message-transfer)
+2016-06-29 18:06:20 666  [main] INFO  c.s.m.app.MessagePlatApplication - The following profiles are active: test
+2016-06-29 18:06:24 5225 [main] INFO  c.s.message.init.InitSystemMode - system start mode is HA.
+2016-06-29 18:06:24 5384 [main] INFO  c.s.message.init.InitSystemMode - this is the master system
+2016-06-29 18:06:25 5932 [main] INFO  c.s.m.app.MessagePlatApplication - Started MessagePlatApplication in 5.736 seconds (JVM running for 6.107)
+2016-06-29 18:06:25 5932 [main] INFO  c.s.m.app.MessagePlatApplication - bean initialize complete....
+2016-06-29 18:06:25 5963 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site2.
+2016-06-29 18:06:25 5963 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site2.
+2016-06-29 18:06:25 5963 [siteId-site2-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site2-send-message-thread.
+2016-06-29 18:06:25 5963 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site1.
+2016-06-29 18:06:25 5963 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site1.
+2016-06-29 18:06:25 5963 [main] INFO  c.s.m.b.m.s.i.SiteMessageServiceImpl - add a message queue for site, siteId=site3.
+2016-06-29 18:06:25 5963 [siteId-site1-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site1-send-message-thread.
+2016-06-29 18:06:25 5963 [main] INFO  c.s.m.b.m.s.i.SiteThreadServiceImpl - create thread for site success. siteId=site3.
+2016-06-29 18:06:25 5963 [siteId-site3-send-message-thread] INFO  c.s.m.b.m.s.t.SiteMessageSendThread - send message thread start, name=siteId-site3-send-message-thread.
+2016-06-29 18:06:25 5963 [Thread-9] INFO  c.s.m.b.m.s.t.MessageDistributeTask - distribute message thread start.
+2016-06-29 18:06:25 5963 [main] INFO  c.s.m.app.MessagePlatApplication - system start up now....
+2016-06-29 18:06:25 5963 [Thread-10] INFO  c.s.m.b.m.s.t.MessageNotifyTask - notify response for message thread start.
