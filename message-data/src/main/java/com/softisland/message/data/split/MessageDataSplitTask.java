@@ -54,9 +54,10 @@ public class MessageDataSplitTask
 
     private long times = 0;
 
-    @Scheduled(cron = "0 7 10 * * *")
+    @Scheduled(cron = "0 0 3 * * *")
     public void run()
     {
+        LOG.debug("task begin...");
         if (days <= 0)
         {
             return;
@@ -88,6 +89,7 @@ public class MessageDataSplitTask
 
             // 拆分消息通知记录
             splitNotifyResult(tableName, tableDate);
+            LOG.debug("task end...");
         }
         catch (Exception e)
         {
