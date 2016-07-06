@@ -7,6 +7,7 @@
   </parent>
   <artifactId>message-data</artifactId>
   <name>message data</name>
+  <packaging>jar</packaging>
   
   <dependencies>
   
@@ -39,5 +40,26 @@
         </dependency>
         
   </dependencies>
+  
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.softisland.message.data.app.MessageDataApplication</mainClass>
+                    <layout>JAR</layout>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <useSystemClassLoader>false</useSystemClassLoader>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
   
 </project>
