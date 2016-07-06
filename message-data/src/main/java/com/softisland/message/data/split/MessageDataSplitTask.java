@@ -136,7 +136,7 @@ public class MessageDataSplitTask
         while (true)
         {
             int ret = jdbcUtils.update(deleteSql);
-            if (ret == 0)
+            if (ret <= 0)
             {
                 break;
             }
