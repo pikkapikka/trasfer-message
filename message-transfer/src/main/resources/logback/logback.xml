@@ -68,10 +68,18 @@
             <level>ERROR</level>
         </filter>
     </appender>
+    
+    <appender name="Sentry" class="com.getsentry.raven.logback.SentryAppender">
+        <dsn>http://96045b700b914d8a89bfa98b1f3fde46:ac5b792a27e64c97bb0846be6c7e80b7@172.16.20.157:9000/5?options</dsn>
+        <tags>tag1:value1,tag2:value2</tags>
+        <!-- Optional, allows to select the ravenFactory -->
+        <!--<ravenFactory>com.getsentry.raven.DefaultRavenFactory</ravenFactory>-->
+    </appender>
 
     <root level="debug">
         <appender-ref ref="stdout"/>
         <appender-ref ref="DEBUG_FILE"/>
+        <appender-ref ref="Sentry"/>
     <!--     <appender-ref ref="INFO_FILE"/>  -->
     <!--    <appender-ref ref="ERROR_FILE"/>  -->
     </root>
