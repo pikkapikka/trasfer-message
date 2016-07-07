@@ -28,6 +28,7 @@ import com.softisland.message.entity.BusinessSite;
 import com.softisland.message.exception.IslandUncheckedException;
 import com.softisland.message.util.Constants;
 import com.softisland.message.util.ErrConstants;
+import com.softisland.message.util.SiteRoleType;
 
 /**
  * 转发消息服务
@@ -107,6 +108,12 @@ public class MessageReceiveServiceImpl implements IMessageReceiveService
         {
             // 消息不能自己发给自己
             if (site.getSiteId().equalsIgnoreCase(message.getFromSite()))
+            {
+                continue;
+            }
+            
+            // 不向发送者发送消息
+            if (SiteRoleType.SENDER.getName().equalsIgnoreCase(site.getRole()))
             {
                 continue;
             }

@@ -19,6 +19,7 @@ import com.softisland.message.business.site.service.ISiteRegisterService;
 import com.softisland.message.exception.IslandUncheckedException;
 import com.softisland.message.util.ErrConstants;
 import com.softisland.message.util.MD5Util;
+import com.softisland.message.util.SiteRoleType;
 
 /**
  * 站点注册/取消注册的控制器
@@ -43,6 +44,12 @@ public class SiteRegisterController
     public @ResponseBody String register(@RequestBody RegisterSiteReq request)
     {
         LOG.debug("enter register site, request={}.", request);
+        if (StringUtils.isEmpty(request.getRole()))
+        {
+            // 如果没有指定站点类型，则其同时作为发送者和接收者
+            request.setRole(SiteRoleType.ALL.name());
+        }
+        
         if (request.isInvalid())
         {
             LOG.error("parameter invalid, request={}.", request);

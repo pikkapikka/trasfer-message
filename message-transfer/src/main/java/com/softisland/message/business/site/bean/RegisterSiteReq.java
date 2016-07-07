@@ -7,6 +7,8 @@ import java.lang.String;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.softisland.message.util.SiteRoleType;
+
 /**
  * 站点注册的请求消息体
  * 
@@ -35,6 +37,9 @@ public class RegisterSiteReq
 
     // 中间件定时向业务平台检测其是否运行的URL
     private String pingUrl;
+
+    // 站点角色：发送者，接收者，或者同同时作为发送者和接收者
+    private String role;
 
     // 校验值
     private String sign;
@@ -109,6 +114,16 @@ public class RegisterSiteReq
         this.pingUrl = pingUrl;
     }
 
+    public String getRole()
+    {
+        return role;
+    }
+
+    public void setRole(String role)
+    {
+        this.role = role;
+    }
+
     public String getSign()
     {
         return sign;
@@ -142,17 +157,40 @@ public class RegisterSiteReq
         builder.append(getUnsendDataUrl);
         builder.append(", pingUrl=");
         builder.append(pingUrl);
+        builder.append(", role=");
+        builder.append(role);
         builder.append("]");
         return builder.toString();
     }
 
     /**
      * 检测参数是否无效
+     * 
      * @return true为无效，false为有效
      */
     public boolean isInvalid()
     {
-        return StringUtils.isEmpty(siteId) || StringUtils.isEmpty(notifyUrl) || StringUtils.isEmpty(receiveMsgUrl)
-                || StringUtils.isEmpty(getUnsendDataUrl) || StringUtils.isEmpty(pingUrl) || StringUtils.isEmpty(sign);
+        boolean ret = StringUtils.isEmpty(siteId) || StringUtils.isEmpty(sign) || StringUtils.isEmpty(pingUrl);
+        if (StringUtils.isEmpty(role) || role.equals(SiteRoleType.ALL.getName()))
+        {
+            ret = ret || StringUtils.isEmpty(notifyUrl) || StringUtils.isEmpty(receiveMsgUrl)
+                    || StringUtils.isEmpty(getUnsendDataUrl);
+        }
+        else if (SiteRoleType.RECEIVER.getName().equals(role))
+        {
+            // 对于接收着，需要有接收地址
+            ret = ret || StringUtils.isEmpty(receiveMsgUrl);
+        }
+        else if (SiteRoleType.SENDER.getName().equals(role))
+        {
+            // 对于发送者，则需要通知地址
+            ret = ret || StringUtils.isEmpty(notifyUrl) || StringUtils.isEmpty(getUnsendDataUrl);
+        }
+        else
+        {
+            ret = false;
+        }
+
+        return ret;
     }
 }

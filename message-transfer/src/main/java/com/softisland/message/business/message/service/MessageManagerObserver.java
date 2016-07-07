@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.softisland.message.observer.SiteObserverEvent;
 import com.softisland.message.util.SiteEventType;
+import com.softisland.message.util.SiteRoleType;
 
 /**
  * 观察者
@@ -43,6 +44,12 @@ public class MessageManagerObserver implements Observer
             SiteObserverEvent event = (SiteObserverEvent) data;
             if (SiteEventType.REGISTER == event.getEventType())
             {
+                if (SiteRoleType.SENDER.getName().equalsIgnoreCase(event.getSite().getRole()))
+                {
+                    LOG.info("sender site not need to reveive message, siteId={}.", event.getSite().getSiteId());
+                    return;
+                }
+                
                 // 生成消息队列
                 siteMsgService.addSite(event.getSite());
                 

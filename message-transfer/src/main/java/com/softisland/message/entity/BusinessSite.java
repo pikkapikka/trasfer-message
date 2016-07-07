@@ -46,6 +46,7 @@ public class BusinessSite extends RegisterSiteReq
         setReceiveMsgUrl(request.getReceiveMsgUrl());
         setGetUnsendDataUrl(request.getGetUnsendDataUrl());
         setPingUrl(request.getPingUrl());
+        setRole(request.getRole());
         setSign(request.getSign());
     }
 
@@ -108,6 +109,7 @@ public class BusinessSite extends RegisterSiteReq
     {
         StringBuilder builder = new StringBuilder();
         builder.append("BusinessSite [super=");
+        builder.append(super.toString());
         builder.append(", registerTime=");
         builder.append(registerTime);
         builder.append("]");

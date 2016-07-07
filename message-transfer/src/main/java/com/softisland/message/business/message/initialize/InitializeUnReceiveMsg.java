@@ -24,6 +24,7 @@ import com.softisland.message.business.site.service.ISiteBaseService;
 import com.softisland.message.entity.BusinessSite;
 import com.softisland.message.exception.IslandUncheckedException;
 import com.softisland.message.init.InitSystemService;
+import com.softisland.message.util.SiteRoleType;
 
 /**
  * 初始化没有进程异常期间，各站点没有发送的数据
@@ -66,6 +67,12 @@ public class InitializeUnReceiveMsg
 
         for (BusinessSite site : sites)
         {
+            // 对于接收站点，则不需要获取获取数据
+            if (SiteRoleType.RECEIVER.getName().equalsIgnoreCase(site.getRole()))
+            {
+                continue;
+            }
+            
             List<MessageAsynRequest> tempMsgs = getMessage(site.getGetUnsendDataUrl());
             if (CollectionUtils.isEmpty(tempMsgs))
             {
