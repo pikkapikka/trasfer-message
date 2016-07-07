@@ -60,19 +60,19 @@ public class SiteMessageSendThread extends Thread
     public void run()
     {
         LOG.info("send message thread start, name={}.", getName());
+        
+        // 处理进程停止时，上次正在发送的消息。
+        // 如果线程中断，则退出
+        if (tryDoSendingMessage())
+        {
+            return;
+        }
 
         while (true)
         {
             if (isInterrupted())
             {
                 LOG.error("thread is interrupted, so it will close. name={}.", getName());
-                return;
-            }
-
-            // 处理进程停止时，上次正在发送的消息。
-            // 如果线程中断，则退出
-            if (tryDoSendingMessage())
-            {
                 return;
             }
 
@@ -170,6 +170,7 @@ public class SiteMessageSendThread extends Thread
             // 如果没有正在发送的消息，则返回
             if (null == message)
             {
+                LOG.info("there is no sending message, siteId={}.", siteId);
                 return false;
             }
 
