@@ -53,6 +53,8 @@ public final class DBConstants
     public static final String COL_RESULT = "result";
 
     public static final String COL_SITEURL = "site_url";
+    
+    public static final String COL_RETTIME = "result_time";
 
     public static final String COL_DSTSITE = "dst_site";
     

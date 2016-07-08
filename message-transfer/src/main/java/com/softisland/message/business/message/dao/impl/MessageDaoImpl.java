@@ -175,6 +175,7 @@ public class MessageDaoImpl implements IMessageDao
         map.put(DBConstants.COL_FROMSITE, siteId);
         map.put(DBConstants.COL_SITEURL, siteUrl);
         map.put(DBConstants.COL_RESULT, isSuc ? 0 : 1);
+        map.put(DBConstants.COL_RETTIME, String.valueOf(System.currentTimeMillis()));
         return map;
     }
 
@@ -185,6 +186,7 @@ public class MessageDaoImpl implements IMessageDao
         map.put(DBConstants.COL_DSTSITE, siteId);
         map.put(DBConstants.COL_SITEURL, siteUrl);
         map.put(DBConstants.COL_RESULT, isSuc ? 0 : 1);
+        map.put(DBConstants.COL_RETTIME, String.valueOf(System.currentTimeMillis()));
         return map;
     }
 
