@@ -69,11 +69,17 @@
         </filter>
     </appender>
     
+    <!-- only for test 
     <appender name="Sentry" class="com.getsentry.raven.logback.SentryAppender">
         <dsn>http://96045b700b914d8a89bfa98b1f3fde46:ac5b792a27e64c97bb0846be6c7e80b7@172.16.20.157:9000/5?options</dsn>
         <tags>tag1:value1,tag2:value2</tags>
-        <!-- Optional, allows to select the ravenFactory -->
-        <!--<ravenFactory>com.getsentry.raven.DefaultRavenFactory</ravenFactory>-->
+    </appender>
+    -->
+    
+    <!-- only to product -->
+    <appender name="Sentry" class="com.getsentry.raven.logback.SentryAppender">
+        <dsn>http://16d5a13afc0345ac8b19c7e7c2a70f71:3e792168ad0b48739a98e2db7f9fb996@123.56.70.240:9000/11?options</dsn>
+        <tags>tag1:value1,tag2:value2</tags>
     </appender>
 
     <root level="debug">

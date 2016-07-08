@@ -54,7 +54,7 @@ public class SiteBaseServiceImpl implements ISiteBaseService
         // 如果查询到的数据为空,说明没有注册站点
         if (MapUtils.isEmpty(sitesInRedis))
         {
-            LOG.warn("there is no data about site from site.");
+            LOG.info("there is no data about site from redis.");
             return new ArrayList<BusinessSite>();
         }
         

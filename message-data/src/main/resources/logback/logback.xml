@@ -28,7 +28,7 @@
     </appender>
 
     <appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logs/message/message-info.log</file>
+        <file>logs/split-data-info.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>logs/split-data-info-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
             <maxHistory>50</maxHistory>
@@ -49,7 +49,7 @@
 
 
     <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/data/logs/collect/trade/error.log</file>
+        <file>logs/split-data-error.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>logs/split-data-error-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
             <maxHistory>50</maxHistory>

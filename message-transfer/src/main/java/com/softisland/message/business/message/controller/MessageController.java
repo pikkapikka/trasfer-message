@@ -56,8 +56,7 @@ public class MessageController
         }
 
         // 检查校验码，已确保消息没有被更改
-        if (!request.getSalt()
-                .equals(MD5Util.sign(request.getMessageId() + request.getMessageType() + request.getMessage())))
+        if (!request.getSalt().equals(MD5Util.sign(request.getMessageId())))
         {
             LOG.error("check salt failed, request={}.", request);
             throw new IslandUncheckedException(ErrConstants.ERR_PARAM_INVALID);
@@ -106,8 +105,7 @@ public class MessageController
         }
 
         // 检查校验码，已确保消息没有被更改
-        if (!request.getSalt()
-                .equals(MD5Util.sign(request.getMessageId() + request.getMessageType() + request.getMessage())))
+        if (!request.getSalt().equals(MD5Util.sign(request.getMessageId())))
         {
             LOG.error("check salt failed, request={}.", request);
             throw new IslandUncheckedException(ErrConstants.ERR_PARAM_INVALID);
