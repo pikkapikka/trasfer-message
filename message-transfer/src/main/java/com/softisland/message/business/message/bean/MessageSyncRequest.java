@@ -4,7 +4,9 @@
 package com.softisland.message.business.message.bean;
 
 import java.util.List;
+import java.util.Map;
 
+import org.apache.commons.collections.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -28,7 +30,7 @@ public class MessageSyncRequest
     private String messageType;
 
     // 消息体，JSON格式
-    private String message;
+    private Map<String, Object> message;
 
     // 消息产生的时间戳
     private String timestamp;
@@ -76,12 +78,12 @@ public class MessageSyncRequest
         this.messageType = messageType;
     }
 
-    public String getMessage()
+    public Map<String, Object> getMessage()
     {
         return message;
     }
 
-    public void setMessage(String message)
+    public void setMessage(Map<String, Object> message)
     {
         this.message = message;
     }
@@ -113,7 +115,7 @@ public class MessageSyncRequest
      */
     public boolean isInvalid()
     {
-        return StringUtils.isEmpty(messageId) || StringUtils.isEmpty(fromSite) || StringUtils.isEmpty(message)
+        return StringUtils.isEmpty(messageId) || StringUtils.isEmpty(fromSite) || MapUtils.isEmpty(message)
                 || StringUtils.isEmpty(messageType) || StringUtils.isEmpty(salt) || StringUtils.isEmpty(timestamp);
     }
 

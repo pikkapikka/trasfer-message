@@ -56,7 +56,7 @@ public class MessageController
         }
 
         // 检查校验码，已确保消息没有被更改
-        if (!request.getSalt().equals(MD5Util.sign(request.getMessageId())))
+        if (!request.getSalt().equals(MD5Util.sign(request.getMessageId() + request.getMessageType())))
         {
             LOG.error("check salt failed, request={}.", request);
             throw new IslandUncheckedException(ErrConstants.ERR_PARAM_INVALID);
@@ -89,7 +89,7 @@ public class MessageController
     }
     
     /**
-     * 发送消息的的URL， 异步消息
+     * 发送消息的的URL， 同步消息
      * 
      * @param request 请求消息
      * @return 成功返回 OK
@@ -105,7 +105,7 @@ public class MessageController
         }
 
         // 检查校验码，已确保消息没有被更改
-        if (!request.getSalt().equals(MD5Util.sign(request.getMessageId())))
+        if (!request.getSalt().equals(MD5Util.sign(request.getMessageId() + request.getMessageType())))
         {
             LOG.error("check salt failed, request={}.", request);
             throw new IslandUncheckedException(ErrConstants.ERR_PARAM_INVALID);

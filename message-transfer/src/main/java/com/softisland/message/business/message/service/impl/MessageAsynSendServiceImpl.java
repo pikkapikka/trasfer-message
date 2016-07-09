@@ -3,6 +3,8 @@
  */
 package com.softisland.message.business.message.service.impl;
 
+import java.util.Map;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpStatus;
 import org.slf4j.Logger;
@@ -108,11 +110,12 @@ public class MessageAsynSendServiceImpl implements IMessageAsynSendService
         }
     }
 
+    @SuppressWarnings("unchecked")
     private MessageForSend getOriginalMessage(MessageInfo message)
     {
         MessageForSend sendMsg = new MessageForSend();
         sendMsg.setFromSite(message.getFromSite());
-        sendMsg.setMessage(message.getMessage());
+        sendMsg.setMessage(JSONObject.parseObject(message.getMessage(), Map.class));
         sendMsg.setMessageId(message.getMessageId());
         sendMsg.setMessageType(message.getMessageType());
         sendMsg.setSalt(message.getSalt());

@@ -3,6 +3,8 @@
  */
 package com.softisland.message.business.message.bean;
 
+import java.util.Map;
+
 /**
  * 发送给站点的消息
  * 
@@ -21,7 +23,7 @@ public class MessageForSend
     private String messageType;
 
     // 消息体，JSON格式
-    private String message;
+    private Map<String, Object> message;
 
     // 消息产生的时间戳
     private String timestamp;
@@ -59,12 +61,12 @@ public class MessageForSend
         this.messageType = messageType;
     }
 
-    public String getMessage()
+    public Map<String, Object> getMessage()
     {
         return message;
     }
 
-    public void setMessage(String message)
+    public void setMessage(Map<String, Object> message)
     {
         this.message = message;
     }

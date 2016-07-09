@@ -64,30 +64,31 @@ public class SitePingTask extends TimerTask
         try
         {
             SoftHttpResponse response = HttpClientUtil.getUrlContent(pingUrl);
-            if (HttpStatus.SC_OK == response.getStatus())
+            if (HttpStatus.SC_OK == response.getStatus() || HttpStatus.SC_CREATED == response.getStatus()
+                    || HttpStatus.SC_ACCEPTED == response.getStatus())
             {
                 isSendEmail = false;
                 timeoutTimes = 0;
             }
             else
             {
-                handlePingFailed(response.getContent());
+                handlePingFailed(response.getContent(), response.getStatus());
             }
 
         }
         catch (Exception e)
         {
-            handlePingFailed(ExceptionUtils.getStackTrace(e));
+            handlePingFailed(ExceptionUtils.getStackTrace(e), HttpStatus.SC_EXPECTATION_FAILED);
         }
 
     }
 
-    private void handlePingFailed(String errorMsg)
+    private void handlePingFailed(String errorMsg, int status)
     {
-        //LOG.error("ping site failed. url={}.", pingUrl);
+        // LOG.error("ping site failed. url={}.", pingUrl);
         if (!isSendEmail)
         {
-            LOG.error("ping site failed. url={}.", pingUrl);
+            LOG.error("ping site failed. status={}, url={}.", status, pingUrl);
             timeoutTimes++;
             if (timeoutTimes >= Constants.PING_MAX_TIMES)
             {
