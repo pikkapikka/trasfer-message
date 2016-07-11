@@ -61,6 +61,8 @@ public final class Constants
     public static final String KEY_STATUS = "status";
 
     public static final String KEY_FAILED = "failed";
+    
+    public static final String QUERY_MESSAGE_LIMIT_PARAM = "?limit=200";
 
     public static final int PING_MAX_TIMES = 5;
     

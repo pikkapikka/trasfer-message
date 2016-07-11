@@ -6,6 +6,7 @@ package com.softisland.message.business.message.initialize;
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
@@ -36,6 +37,8 @@ import com.softisland.message.util.SiteRoleType;
 public class InitializeUnReceiveMsg
 {
     private static final Logger LOG = LoggerFactory.getLogger(InitSystemService.class);
+    
+    private static final int SLEEP_TIME = 200;
 
     @Autowired
     private ISiteBaseService siteService;
@@ -73,39 +76,56 @@ public class InitializeUnReceiveMsg
                 continue;
             }
             
-            List<MessageAsynRequest> tempMsgs = getMessage(site.getGetUnsendDataUrl());
-            if (CollectionUtils.isEmpty(tempMsgs))
+            while (true)
             {
-                LOG.info("there is no unsend message from site, siteId={}.", site.getSiteId());
-                continue;
-            }
-
-            for (MessageAsynRequest tempMsg : tempMsgs)
-            {
-                if (tempMsg.isInvalid())
+                List<MessageAsynRequest> tempMsgs = getMessage(site.getGetUnsendDataUrl());
+                if (CollectionUtils.isEmpty(tempMsgs))
                 {
-                    LOG.error("message is invalid, it will be discarded.");
-                    continue;
+                    LOG.info("there is no unsend message from site, siteId={}.", site.getSiteId());
+                    break;
                 }
                 
-                MessageInfo message = new MessageInfo(tempMsg);
-                message.setUuid(UUID.randomUUID().toString());
-                message.setReceiveTime(System.currentTimeMillis());
-                message.setAsyn(true);
+                for (MessageAsynRequest tempMsg : tempMsgs)
+                {
+                    if (tempMsg.isInvalid())
+                    {
+                        LOG.error("message is invalid, it will be discarded.");
+                        continue;
+                    }
+                    
+                    MessageInfo message = new MessageInfo(tempMsg);
+                    message.setUuid(UUID.randomUUID().toString());
+                    message.setReceiveTime(System.currentTimeMillis());
+                    message.setAsyn(true);
 
-                messageRecService.transferMessageAsyn(message);
+                    messageRecService.transferMessageAsyn(message);
+                }
+                
+                try
+                {
+                    // 休眠一点时间
+                    TimeUnit.MILLISECONDS.sleep(SLEEP_TIME);
+                }
+                catch (InterruptedException e)
+                {
+                    LOG.error("sleep failed.", e);
+                }
             }
+            
+            LOG.info("initialize un send date for site end, siteId={}", site.getSiteId());
         }
     }
 
     private List<MessageAsynRequest> getMessage(String url)
     {
+        String queryUrl = url + Constants.QUERY_MESSAGE_LIMIT_PARAM; 
         try
         {
-            SoftHttpResponse response = HttpClientUtil.getJson(url);
+            
+            SoftHttpResponse response = HttpClientUtil.getJson(queryUrl);
             if (!Constants.isHttpSuc(response.getStatus()))
             {
-                LOG.error("get message failed, url={}, httpcode={}.", url, response.getStatus());
+                LOG.error("get message failed, url={}, httpcode={}.", queryUrl, response.getStatus());
                 throw new IslandUncheckedException(String.valueOf(response.getStatus()));
             }
 
@@ -114,7 +134,7 @@ public class InitializeUnReceiveMsg
         }
         catch (IOException e)
         {
-            LOG.error("get message catch exception, url=" + url, e);
+            LOG.error("get message catch exception, url=" + queryUrl, e);
             throw new IslandUncheckedException(e);
         }
     }
