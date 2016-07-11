@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.HttpStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -314,10 +313,10 @@ public class MessageNotifyServiceImpl implements IMessageNotifyService
         String rets = (String) redisUtils.getHashValueByKey(Constants.NOTIFY_RESPONSE_INFO, messageUuid);
 
         SoftHttpResponse response = sendMessage(notifyUrl, rets);
-        if (HttpStatus.SC_OK != response.getStatus())
+        if (!Constants.isHttpSuc(response.getStatus()))
         {
-            LOG.error("send notify message failed, url is {}, messageUuid={}, content={}.", notifyUrl, messageUuid,
-                    response.getContent());
+            LOG.error("send notify message failed, url is {}, messageUuid={}, httpcode={}, content={}.", notifyUrl,
+                    messageUuid, response.getStatus(), response.getContent());
             throw new IslandUncheckedException(String.valueOf(response.getStatus()));
         }
 

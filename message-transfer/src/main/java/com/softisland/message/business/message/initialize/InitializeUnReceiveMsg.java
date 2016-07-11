@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.UUID;
 
 import org.apache.commons.collections.CollectionUtils;
-import org.apache.http.HttpStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +16,14 @@ import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSONObject;
 import com.softisland.common.utils.HttpClientUtil;
 import com.softisland.common.utils.bean.SoftHttpResponse;
-import com.softisland.message.business.message.bean.MessageInfo;
 import com.softisland.message.business.message.bean.MessageAsynRequest;
+import com.softisland.message.business.message.bean.MessageInfo;
 import com.softisland.message.business.message.service.IMessageReceiveService;
 import com.softisland.message.business.site.service.ISiteBaseService;
 import com.softisland.message.entity.BusinessSite;
 import com.softisland.message.exception.IslandUncheckedException;
 import com.softisland.message.init.InitSystemService;
+import com.softisland.message.util.Constants;
 import com.softisland.message.util.SiteRoleType;
 
 /**
@@ -103,7 +103,7 @@ public class InitializeUnReceiveMsg
         try
         {
             SoftHttpResponse response = HttpClientUtil.getJson(url);
-            if (HttpStatus.SC_OK != response.getStatus())
+            if (!Constants.isHttpSuc(response.getStatus()))
             {
                 LOG.error("get message failed, url={}, httpcode={}.", url, response.getStatus());
                 throw new IslandUncheckedException(String.valueOf(response.getStatus()));

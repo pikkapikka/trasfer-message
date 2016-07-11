@@ -3,6 +3,8 @@
  */
 package com.softisland.message.util;
 
+import org.apache.http.HttpStatus;
+
 /**
  * 常量定义文件
  * 
@@ -61,4 +63,14 @@ public final class Constants
     public static final String KEY_FAILED = "failed";
 
     public static final int PING_MAX_TIMES = 5;
+    
+    /**
+     * 判断当前http返回码是否标示成功
+     * @param status 状态码
+     * @return 成功返回true，其余为false
+     */
+    public static boolean isHttpSuc(int status)
+    {
+        return status == HttpStatus.SC_OK || status == HttpStatus.SC_CREATED || status == HttpStatus.SC_ACCEPTED;
+    }
 }

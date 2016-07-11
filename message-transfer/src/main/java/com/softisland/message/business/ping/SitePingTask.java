@@ -64,8 +64,7 @@ public class SitePingTask extends TimerTask
         try
         {
             SoftHttpResponse response = HttpClientUtil.getUrlContent(pingUrl);
-            if (HttpStatus.SC_OK == response.getStatus() || HttpStatus.SC_CREATED == response.getStatus()
-                    || HttpStatus.SC_ACCEPTED == response.getStatus())
+            if (Constants.isHttpSuc(response.getStatus()))
             {
                 isSendEmail = false;
                 timeoutTimes = 0;

@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.collections.CollectionUtils;
-import org.apache.http.HttpStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -112,7 +111,7 @@ public class MessageReceiveServiceImpl implements IMessageReceiveService
                 continue;
             }
             
-            // 不向发送者发送消息
+            // 不向发送者发送
             if (SiteRoleType.SENDER.getName().equalsIgnoreCase(site.getRole()))
             {
                 continue;
@@ -135,7 +134,7 @@ public class MessageReceiveServiceImpl implements IMessageReceiveService
                 SoftHttpResponse response = syncSendService.sendToSite(message, site.getSiteId());
                 temp.put(Constants.KEY_CONTENT, response.getContent());
                 temp.put(Constants.KEY_STATUS,
-                        HttpStatus.SC_OK == response.getStatus() ? Constants.KEY_SUCCESS : Constants.KEY_FAILED);
+                        Constants.isHttpSuc(response.getStatus()) ? Constants.KEY_SUCCESS : Constants.KEY_FAILED);
                 siteRet.put(site.getSiteId(), temp);
             }
             catch (Exception e)

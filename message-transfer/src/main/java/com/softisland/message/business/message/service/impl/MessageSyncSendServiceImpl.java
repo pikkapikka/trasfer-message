@@ -5,7 +5,6 @@ package com.softisland.message.business.message.service.impl;
 
 import java.util.Map;
 
-import org.apache.http.HttpStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +20,7 @@ import com.softisland.message.business.message.service.IMessageSyncSendService;
 import com.softisland.message.business.site.service.ISiteBaseService;
 import com.softisland.message.entity.BusinessSite;
 import com.softisland.message.exception.IslandUncheckedException;
+import com.softisland.message.util.Constants;
 import com.softisland.message.util.ErrConstants;
 
 /**
@@ -54,18 +54,20 @@ public class MessageSyncSendServiceImpl implements IMessageSyncSendService
 
         // 通过http post消息发送消息
         SoftHttpResponse response = sendMessage(message, site);
-        if (HttpStatus.SC_OK != response.getStatus())
+        if (!Constants.isHttpSuc(response.getStatus()))
         {
-            LOG.error("send message to target site failed. dstSite={}, url={}, message={}, error={}.", dstSite,
-                    site.getReceiveMsgUrl(), message, response.getContent());
+            LOG.error("send message to target site failed. dstSite={}, url={}, message={}, httpcode={}, error={}.",
+                    dstSite, site.getReceiveMsgUrl(), message, response.getStatus(), response.getContent());
         }
-
-        LOG.debug("send message to target site success. dstSite={}, url={}, message={}.", dstSite,
-                site.getReceiveMsgUrl(), message);
+        else
+        {
+            LOG.debug("send message to target site success. dstSite={}, url={}, message={}.", dstSite,
+                    site.getReceiveMsgUrl(), message);
+        }
 
         // 入库保存
         dao.saveTransferResult(message.getUuid(), site.getSiteId(), site.getReceiveMsgUrl(),
-                HttpStatus.SC_OK == response.getStatus());
+                Constants.isHttpSuc(response.getStatus()));
         return response;
 
     }

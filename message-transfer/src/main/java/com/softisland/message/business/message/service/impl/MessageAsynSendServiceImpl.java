@@ -6,7 +6,6 @@ package com.softisland.message.business.message.service.impl;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.HttpStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +18,8 @@ import com.softisland.common.utils.bean.SoftHttpResponse;
 import com.softisland.message.business.message.bean.MessageForSend;
 import com.softisland.message.business.message.bean.MessageInfo;
 import com.softisland.message.business.message.dao.IMessageDao;
-import com.softisland.message.business.message.service.IMessageNotifyService;
 import com.softisland.message.business.message.service.IMessageAsynSendService;
+import com.softisland.message.business.message.service.IMessageNotifyService;
 import com.softisland.message.business.site.service.ISiteBaseService;
 import com.softisland.message.entity.BusinessSite;
 import com.softisland.message.exception.IslandUncheckedException;
@@ -66,23 +65,27 @@ public class MessageAsynSendServiceImpl implements IMessageAsynSendService
 
         // 通过http post消息发送消息
         SoftHttpResponse response = sendMessage(message, site);
-        if (HttpStatus.SC_OK != response.getStatus())
+        if (!Constants.isHttpSuc(response.getStatus()))
         {
-            LOG.error("send message to target site failed. dstSite={}, url={}, message={}, error={}.", dstSite,
-                    site.getReceiveMsgUrl(), message, response.getContent());
+            LOG.error("send message to target site failed. dstSite={}, url={}, message={}, httpcode={}, error={}.",
+                    dstSite, site.getReceiveMsgUrl(), message, response.getStatus(), response.getContent());
+        }
+        else
+        {
+            LOG.debug("send message to target site success. dstSite={}, url={}, message={}.", dstSite,
+                    site.getReceiveMsgUrl(), message);
         }
 
-        LOG.debug("send message to target site success. dstSite={}, url={}, message={}.", dstSite,
-                site.getReceiveMsgUrl(), message);
+        
         if (message.isNeedNotify())
         {
             msgNotifyService.addMessageResult(dstSite, response.getContent(), message,
-                    HttpStatus.SC_OK == response.getStatus());
+                    Constants.isHttpSuc(response.getStatus()));
         }
 
         // 入库保存
         dao.saveTransferResult(message.getUuid(), site.getSiteId(), site.getReceiveMsgUrl(),
-                HttpStatus.SC_OK == response.getStatus());
+                Constants.isHttpSuc(response.getStatus()));
 
         // 发送成功，删除记录
         redisUtils.removeMapValues(Constants.MESSAGE_SENDING_INFO, dstSite);
