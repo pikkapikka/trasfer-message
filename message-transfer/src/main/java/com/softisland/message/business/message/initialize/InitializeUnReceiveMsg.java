@@ -12,6 +12,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSONObject;
@@ -46,11 +47,22 @@ public class InitializeUnReceiveMsg
     @Autowired
     private IMessageReceiveService messageRecService;
     
+    @Value("${message.initialize.unsend.data}")
+    private String initUnsendData;
+    
     public void postInitData()
     {
         try
         {
-            init();
+            boolean initData = Boolean.valueOf(initUnsendData).booleanValue();
+            if (initData)
+            {
+                init();
+            }
+            else
+            {
+                LOG.info("there not need to initialize unsend data from configuration.");
+            }
         }
         catch (Exception e)
         {
