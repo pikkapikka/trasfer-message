@@ -87,7 +87,7 @@ public class SitePingTask extends TimerTask
         // LOG.error("ping site failed. url={}.", pingUrl);
         if (!isSendEmail)
         {
-            LOG.error("ping site failed. status={}, url={}.", status, pingUrl);
+            LOG.error("ping site failed. status={}, url={}, errorMsg={}", status, pingUrl, errorMsg);
             timeoutTimes++;
             if (timeoutTimes >= Constants.PING_MAX_TIMES)
             {
