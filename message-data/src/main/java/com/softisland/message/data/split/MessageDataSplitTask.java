@@ -30,21 +30,21 @@ public class MessageDataSplitTask
     private static final String SQL_INSERT_RECEIVE_TBL = "create table %s ( select * "
             + "from tbl_received_message m where m.receive_time < %d )";
 
-    private static final String SQL_DELETE_RECEIVE_TBL = "delete from tbl_received_message where receive_time < %d limit 2000";
+    private static final String SQL_DELETE_RECEIVE_TBL = "delete from tbl_received_message where receive_time < %d limit 10000";
 
     private static final String SQL_SEND_RESULT_TBL = "create table %s (select * from tbl_message_send_result where"
             + " exists ( select 1 from %s m, tbl_message_send_result t where m.uuid = t.message_uuid))";
 
     private static final String SQL_DELETE_SEND_RESULT_TBL = "delete from tbl_message_send_result where"
-            + " message_uuid in ( select message_uuid from %s) limit 2000";
+            + " message_uuid in ( select message_uuid from %s) limit 10000";
 
     private static final String SQL_NOTIFY_RESULT_TBL = "create table %s (select * from tbl_message_notify_result where"
             + " exists ( select 1 from %s m, tbl_message_notify_result t where m.uuid = t.message_uuid))";
 
     private static final String SQL_DELETE_NOTIFY_RESULT_TBL = "delete from tbl_message_notify_result where"
-            + " message_uuid in ( select message_uuid from %s) limit 2000";
+            + " message_uuid in ( select message_uuid from %s) limit 10000";
 
-    private static final int DELETE_SLEEP_TIME = 1000;
+    private static final int DELETE_SLEEP_TIME = 500;
 
     @Value("${message.data.split.per.days}")
     private int days;
