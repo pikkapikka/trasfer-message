@@ -36,10 +36,12 @@ public class InitializeMessageThread
     {
         // 启动消息分发线程
         Thread distributeThread = new Thread(new MessageDistributeTask(originalMsgService, siteMsgService));
+        distributeThread.setName("message-distribute-thread");
         distributeThread.start();
         
         // 启动通知线程
         Thread notifyThread = new Thread(new MessageNotifyTask(msgNotifyService));
+        notifyThread.setName("message-notify-thread");
         notifyThread.start();
     }
 }
