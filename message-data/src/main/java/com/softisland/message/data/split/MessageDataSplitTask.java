@@ -58,6 +58,7 @@ public class MessageDataSplitTask
     public void run()
     {
         LOG.debug("task begin...");
+        times++;
         if (days <= 0)
         {
             return;
@@ -67,8 +68,7 @@ public class MessageDataSplitTask
         {
             return;
         }
-
-        times++;
+        
         Calendar nowCal = Calendar.getInstance();
         nowCal.add(Calendar.DAY_OF_MONTH, -days);
 
