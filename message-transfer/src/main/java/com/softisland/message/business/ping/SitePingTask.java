@@ -3,16 +3,15 @@
  */
 package com.softisland.message.business.ping;
 
+import java.net.URI;
 import java.util.TimerTask;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.apache.http.HttpStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.softisland.bean.utils.EmailUtils;
-import com.softisland.common.utils.HttpClientUtil;
-import com.softisland.common.utils.bean.SoftHttpResponse;
 import com.softisland.message.util.Constants;
 
 /**
@@ -63,31 +62,22 @@ public class SitePingTask extends TimerTask
     {
         try
         {
-            SoftHttpResponse response = HttpClientUtil.getUrlContent(pingUrl);
-            if (Constants.isHttpSuc(response.getStatus()))
-            {
-                isSendEmail = false;
-                timeoutTimes = 0;
-            }
-            else
-            {
-                handlePingFailed(response.getContent(), response.getStatus());
-            }
-
+            IOUtils.toString(new URI(pingUrl));
+            isSendEmail = false;
+            timeoutTimes = 0;
         }
         catch (Exception e)
         {
-            handlePingFailed(ExceptionUtils.getStackTrace(e), HttpStatus.SC_EXPECTATION_FAILED);
+            handlePingFailed(ExceptionUtils.getStackTrace(e));
         }
-
     }
 
-    private void handlePingFailed(String errorMsg, int status)
+    private void handlePingFailed(String errorMsg)
     {
         // LOG.error("ping site failed. url={}.", pingUrl);
         if (!isSendEmail)
         {
-            LOG.error("ping site failed. status={}, url={}, errorMsg={}", status, pingUrl, errorMsg);
+            LOG.error("ping site failed. url={}, errorMsg={}", pingUrl, errorMsg);
             timeoutTimes++;
             if (timeoutTimes >= Constants.PING_MAX_TIMES)
             {
