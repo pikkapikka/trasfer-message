@@ -42,7 +42,10 @@ public final class Constants
     public static final String NOTIFY_FROMSITE_INFO = "notify_fromsite_island";
 
     // 消息队列
-    public static final String NOTIFY_MESSAGE_QUEUE_INFO = "notify_message_queue_island";
+    public static final String NOTIFY_MESSAGE_QUEUE_INFO = "notify_message_queue_island_";
+    
+    // 消息队列
+    public static final String SEND_MESSAGE_FLAG = "island_message_send_";
 
     // 各站点响应消息
     public static final String NOTIFY_RESPONSE_INFO = "notify_response_island";

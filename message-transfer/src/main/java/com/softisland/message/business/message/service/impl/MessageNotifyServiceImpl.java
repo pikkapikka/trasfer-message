@@ -111,10 +111,6 @@ public class MessageNotifyServiceImpl implements IMessageNotifyService
                 
                 siteRet.putAll(maps);
                 
-                
-                
-//                Map<String, Object> siteMap = JSONObject.parseObject(siteRet, Map.class);
-//                siteMap.put(dstSite, tempRet);
                 rets.put(Constants.KEY_RESULT, siteRet);
             }
             else
@@ -163,7 +159,7 @@ public class MessageNotifyServiceImpl implements IMessageNotifyService
         try
         {
             // 保存消息队列
-            redisUtils.appendValueToList(Constants.NOTIFY_MESSAGE_QUEUE_INFO, messageUuid);
+            redisUtils.appendValueToList(Constants.NOTIFY_MESSAGE_QUEUE_INFO + fromSite, messageUuid);
 
             // 保存目标站点的数量
             redisUtils.putValueToMap(Constants.NOTIFY_DSTSITE_NUM_INFO, messageUuid, String.valueOf(dstNum));
@@ -241,7 +237,7 @@ public class MessageNotifyServiceImpl implements IMessageNotifyService
     /**
      * {@inheritDoc}
      */
-    public synchronized void removeMessageResponse(String messageUuid)
+    public synchronized void removeMessageResponse(String fromSite, String messageUuid)
     {
         // 删除响应站点数量
         deleteTempData(Constants.NOTIFY_DSTSITE_NUM_INFO, messageUuid);
@@ -255,7 +251,7 @@ public class MessageNotifyServiceImpl implements IMessageNotifyService
         try
         {
             // 从头部移除消息
-            redisUtils.lpopValueFromList(Constants.NOTIFY_MESSAGE_QUEUE_INFO);
+            redisUtils.lpopValueFromList(Constants.NOTIFY_MESSAGE_QUEUE_INFO + fromSite);
         }
         catch (Exception e)
         {
@@ -278,12 +274,12 @@ public class MessageNotifyServiceImpl implements IMessageNotifyService
     /**
      * {@inheritDoc}
      */
-    public String takeMessageUuid()
+    public String takeMessageUuid(String fromSite)
     {
         try
         {
             // 总是从队列的头部获取信息
-            return redisUtils.getValueFromList(Constants.NOTIFY_MESSAGE_QUEUE_INFO, 0);
+            return redisUtils.getValueFromList(Constants.NOTIFY_MESSAGE_QUEUE_INFO + fromSite, 0);
         }
         catch (Exception e)
         {

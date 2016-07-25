@@ -59,7 +59,7 @@ public class SiteThreadServiceImpl implements ISiteThreadService
         // 添加到消息管理器
         siteThreads.put(site.getSiteId(), siteThread);
 
-        LOG.info("create thread for site success. siteId={}.", site.getSiteId());
+        LOG.info("create send thread for site success. siteId={}.", site.getSiteId());
     }
 
     /**
@@ -67,29 +67,29 @@ public class SiteThreadServiceImpl implements ISiteThreadService
      */
     public void removeSite(String siteId)
     {
-        LOG.debug("begin remove a thread for site, siteId={}.", siteId);
+        LOG.debug("begin remove a send thread for site, siteId={}.", siteId);
 
         SiteMessageSendThread siteThread = siteThreads.get(siteId);
         if (null != siteThread)
         {
             // 发送线程中断
             siteThread.interrupt();
-            LOG.info("send interrupt to thread for site, siteId={}.", siteId);
+            LOG.info("send interrupt to send thread for site, siteId={}.", siteId);
 
             try
             {
                 siteThread.join();
-                LOG.info("thread for site is closed, siteId={}.", siteId);
+                LOG.info("send thread for site is closed, siteId={}.", siteId);
             }
             catch (InterruptedException e)
             {
-                LOG.info("wait thread to close failed, siteId={}.", siteId);
-                LOG.info("wait thread to close exception.", e);
+                LOG.info("wait send thread to close failed, siteId={}.", siteId);
+                LOG.info("wait send thread to close exception.", e);
             }
         }
 
         siteThreads.remove(siteId);
-        LOG.info("remove a thread for site success. siteId={}.", siteId);
+        LOG.info("remove a send thread for site success. siteId={}.", siteId);
     }
 
 }

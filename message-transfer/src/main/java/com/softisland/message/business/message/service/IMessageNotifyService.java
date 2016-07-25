@@ -52,15 +52,17 @@ public interface IMessageNotifyService
     
     /**
      * 移除消息的结果
+     * @param fromSite 消息来源站点
      * @param messageUuid 消息唯一标识符
      */
-    void removeMessageResponse(String messageUuid);
+    void removeMessageResponse(String fromSite, String messageUuid);
     
     /**
      * 获取欲通知的消息UUID。 如果没有，则此接口阻塞
+     * @param fromSite 消息发送站点
      * @return 消息UUID
      */
-    String takeMessageUuid();
+    String takeMessageUuid(String fromSite);
     
     /**
      * 发送消息

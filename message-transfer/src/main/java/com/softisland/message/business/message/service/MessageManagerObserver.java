@@ -31,6 +31,9 @@ public class MessageManagerObserver implements Observer
     
     @Autowired
     private ISiteMessageService siteMsgService;
+    
+    @Autowired
+    private INotifyThreadService notifyThreadService;
 
     /*
      * (non-Javadoc)
@@ -55,14 +58,20 @@ public class MessageManagerObserver implements Observer
                 
                 // 添加注册站点事件
                 siteThreadService.addSite(event.getSite());
+                
+                // 消息通知服务
+                notifyThreadService.addSite(event.getSite());
             }
             else
             {
                 // 删除消息队列
                 siteMsgService.removeSite(event.getSite().getSiteId());
-                
+
                 // 删除站点事件
                 siteThreadService.removeSite(event.getSite().getSiteId());
+
+                // 删除通知线程事件
+                notifyThreadService.removeSite(event.getSite().getSiteId());
             }
         }
         else

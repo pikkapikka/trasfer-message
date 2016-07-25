@@ -72,7 +72,7 @@ public class SiteMessageSendThread extends Thread
         {
             if (isInterrupted())
             {
-                LOG.error("thread is interrupted, so it will close. name={}.", getName());
+                LOG.error("send message thread is interrupted, so it will close. name={}.", getName());
                 return;
             }
 

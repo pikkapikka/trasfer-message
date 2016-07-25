@@ -24,6 +24,7 @@ import com.softisland.message.business.message.service.IMessageNotifyService;
 import com.softisland.message.business.message.service.ISiteMessageService;
 import com.softisland.message.entity.BusinessSite;
 import com.softisland.message.exception.IslandUncheckedException;
+import com.softisland.message.util.Constants;
 import com.softisland.message.util.ErrConstants;
 
 /**
@@ -127,7 +128,7 @@ public class SiteMessageServiceImpl implements ISiteMessageService
         if ((null == isFull) || !isFull.booleanValue())
         {
             // if (!messageQueue.offer(message))
-            if (redisUtils.getListSize(dstSite) >= QUEUE_SIZE)
+            if (redisUtils.getListSize(Constants.SEND_MESSAGE_FLAG + dstSite) >= QUEUE_SIZE)
             {
                 LOG.error("offer message to queue of site failed, may be is full, meesgae={}. site={}.", message,
                         dstSite);
@@ -138,7 +139,7 @@ public class SiteMessageServiceImpl implements ISiteMessageService
             }
             else
             {
-                redisUtils.appendValueToList(dstSite, JSONObject.toJSONString(message));
+                redisUtils.appendValueToList(Constants.SEND_MESSAGE_FLAG + dstSite, JSONObject.toJSONString(message));
             }
         }
         else
@@ -154,7 +155,7 @@ public class SiteMessageServiceImpl implements ISiteMessageService
     private void tryFetchDataFromDB(String dstSite) throws Exception
     {
         String lastReceiveTime = null;
-        int times = (int) ((QUEUE_SIZE - redisUtils.getListSize(dstSite)) / FETCH_DATE_PER_NUM);
+        int times = (int) ((QUEUE_SIZE - redisUtils.getListSize(Constants.SEND_MESSAGE_FLAG + dstSite)) / FETCH_DATE_PER_NUM);
 
         // 从数据库中获取临时表数据，并放入到消息队列中。
         for (int idx = 0; idx < times; idx++)
@@ -169,7 +170,7 @@ public class SiteMessageServiceImpl implements ISiteMessageService
             for (MessageInfo message : messages)
             {
                 // 消息队列此时有空余的空间，应该空余存放数据成功
-                redisUtils.appendValueToList(dstSite, JSONObject.toJSONString(message));
+                redisUtils.appendValueToList(Constants.SEND_MESSAGE_FLAG + dstSite, JSONObject.toJSONString(message));
 
                 // 记录获取的最后一条记录
                 lastReceiveTime = String.valueOf(message.getReceiveTime());
@@ -196,7 +197,7 @@ public class SiteMessageServiceImpl implements ISiteMessageService
     {
         try
         {
-            String strMsg = redisUtils.lpopValueFromList(siteId);
+            String strMsg = redisUtils.lpopValueFromList(Constants.SEND_MESSAGE_FLAG + siteId);
             if (StringUtils.isEmpty(strMsg))
             {
                 return null;
@@ -231,7 +232,7 @@ public class SiteMessageServiceImpl implements ISiteMessageService
         try
         {
             // 删除在消息缓存中的消息
-            redisUtils.deleteValue(siteId);
+            redisUtils.deleteValue(Constants.SEND_MESSAGE_FLAG + siteId);
         }
         catch (Exception e)
         {
